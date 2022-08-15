@@ -398,7 +398,7 @@ Es una reducción de al menos 99,95% en el uso total de energía respecto a la e
 
 El costo de 100.000 transacciones de Visa es de 149 kwH – [Consumo de energía promedio de la red Bitcoin por transacción en comparación con la red VISA en 2020, Statista](https://www.statista.com/statistics/881541/bitcoin-energy-consumption-transaction-comparison-visa/)
 
-Hasta septiembre de 2020, procesaron 140.839.000.000 transacciones – [Informe financiero de Visa Q4 2020 ](https://s1.q4cdn.com/050606653/files/doc_financials/2020/q4/Visa-Inc.-Q4-2020-Operational-Performance-Data. pdf)
+Hasta septiembre de 2020, procesaron 140.839.000.000 transacciones – [Informe financiero de Visa Q4 2020 ](https://s1.q4cdn.com/050606653/files/doc_financials/2020/q4/Visa-Inc.-Q4-2020-Operational-Performance-Data.pdf)
 
 #### 3. Uso de energía para 100.000 transacciones en una red de prueba de participación fragmentada {#fn-3}
 
@@ -406,7 +406,7 @@ Se calcula que las actualizaciones de escalabilidad podrán permitir que la red 
 
 [Vitalik Buterin sobre el potencial de las transacciones por segundo con la fragmentación](https://twitter.com/VitalikButerin/status/1312905884549300224)
 
-Como mínimo, fraccionar permitirá aumentar 64 veces la cantidad de transacciones, que en la actualidad se sitúa en alrededor de 15 transacciones. Esa es la cantidad de cadenas de fragmentación (datos y capacidad adicionales) que se están introduciendo. [Más información sobre las cadenas de fragmentación](/upgrades/shard-chains/)
+Como mínimo, fraccionar permitirá aumentar 64 veces la cantidad de transacciones, que en la actualidad se sitúa en alrededor de 15 transacciones. Esa es la cantidad de cadenas de fragmentación (datos y capacidad adicionales) que se están introduciendo. [Más información sobre las cadenas de fragmentación](/upgrades/sharding/)
 
 Eso significa que podemos estimar cuánto tiempo llevará procesar 100.000 transacciones para poder compararlo con el ejemplo anterior de Visa.
 
