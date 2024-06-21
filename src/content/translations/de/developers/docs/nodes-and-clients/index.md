@@ -2,7 +2,6 @@
 title: Nodes und Clients
 description: Eine Übersicht über Ethereum-Nodes und Client-Software, wie eine Node eingerichtet wird und warum du dies tun solltest.
 lang: de
-sidebar: true
 sidebarDepth: 2
 ---
 
@@ -96,13 +95,13 @@ Wenn du eher ein technischer Benutzer bist, kannst du [einen eigenen Node](/deve
 ### Ressourcen {#resources}
 
 - [Running Ethereum Full Nodes: A Complete Guide](https://medium.com/coinmonks/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _Nov 7, 2019 - Justin Leroux_
-- [Node Configuration Cheat Sheet](https://dev. to/5chdn/ethereum-node-configuration-modes-cheat-sheet-25l8) _Jan 5, 2019 - Afri Schoedon_
+- [Node Configuration Cheat Sheet](https://dev.to/5chdn/ethereum-node-configuration-modes-cheat-sheet-25l8) _Jan 5, 2019 - Afri Schoedon_
 - [How To Install & Run a Geth Node](https://www.quiknode.io/guides/infrastructure/how-to-install-and-run-a-geth-node) _Oct 4, 2020 - Sahil Sen_
 - [How To Install & Run a OpenEthereum (fka. Parity) Node](https://www.quiknode.io/guides/infrastructure/how-to-run-a-openethereum-ex-parity-client-node) _Sept 22, 2020 - Sahil Sen_
 
 ## Alternativen {#alternatives}
 
-Der Betrieb eines eigenen Nodes kann schwierig sein und du musst nicht immer eine eigene Instanz betreiben. In diesem Fall kannst du einen Drittanbieter wie [Infura](https://infura.io), [Alchemy ](https://alchemyapi.io)oder [QuikNode](https://www.quiknode.io) verwenden. Alternativ dazu ist [ArchiveNode](https://archivenode.io/) ein von der Community finanzierter Archivknoten, der unabhängigen Entwicklern, die sich dies sonst nicht leisten könnten, Archivdaten auf der Ethereum-Blockchain zur Verfügung stellen soll. Einen Überblick über die Verwendung dieser Dienste findest du unter [Nodes als Dienst](/developers/docs/nodes-and-clients/nodes-as-a-service/).
+Der Betrieb eines eigenen Nodes kann schwierig sein und du musst nicht immer eine eigene Instanz betreiben. In diesem Fall kannst du einen Drittanbieter wie [Infura](https://infura.io), [Alchemy](https://alchemyapi.io) oder [QuikNode](https://www.quiknode.io) verwenden. Alternativ dazu ist [ArchiveNode](https://archivenode.io/) ein von der Community finanzierter Archivknoten, der unabhängigen Entwicklern, die sich dies sonst nicht leisten könnten, Archivdaten auf der Ethereum-Blockchain zur Verfügung stellen soll. Einen Überblick über die Verwendung dieser Dienste findest du unter [Nodes als Dienst](/developers/docs/nodes-and-clients/nodes-as-a-service/).
 
 Wenn jemand in deiner Community einen Ethereum-Node mit einer öffentlichen API betreibt, kannst du deine Light Wallets (wie MetaMask) auf einen Community-Node [via Custom RPC](https://metamask.zendesk.com/hc/en-us/articles/360015290012-Using-a-Local-Node) verweisen lassen und so mehr Privatsphäre erreichen als mit einer zufälligen vertrauenswürdigen Drittpartei.
 
@@ -118,8 +117,8 @@ Diese Tabelle gibt einen Überblick über die verschiedenen Clients. Sie alle be
 | ----------------------------------------------------------------------- | -------- | --------------------- | -------------------------------------------- | ------------------- | ------------------- |
 | [Geth](https://geth.ethereum.org/)                                      | Go       | Linux, Windows, MacOS | Mainnet, Görli, Rinkeby, Ropsten             | Snap, Full          | Archive, Pruned     |
 | [Nethermind](http://nethermind.io/)                                     | C#, .NET | Linux, Windows, MacOS | Mainnet, Görli, Ropsten, Rinkeby und weitere | Fast, Beam, Archive | Archive, Pruned     |
-| [Besu](https://pegasys.tech/solutions/hyperledger-besu/)                | Java     | Linux, Windows, MacOS | Mainnet, Rinkeby, Ropsten, Görli und weitere | Fast, Full          | Archive, Pruned     |
-| [Erigon](https://github.com/ledgerwatch/erigon)                         | Los      | Linux, Windows, MacOS | Mainnet, Görli, Rinkeby, Ropsten             | Full                | Archive, Pruned     |
+| [Besu](https://besu.hyperledger.org/en/stable/)                         | Java     | Linux, Windows, MacOS | Mainnet, Rinkeby, Ropsten, Görli und weitere | Fast, Full          | Archive, Pruned     |
+| [Erigon](https://github.com/ledgerwatch/erigon)                         | Go       | Linux, Windows, MacOS | Mainnet, Görli, Rinkeby, Ropsten             | Full                | Archive, Pruned     |
 | [OpenEthereum (veraltet)](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, MacOS | Mainnet, Kovan, Ropsten und weitere          | Warp, Full          | Archive, Pruned     |
 
 **Beachte, dass OpenEthereum [veraltet](https://medium.com/openethereum/gnosis-joins-erigon-formerly-turbo-geth-to-release-next-gen-ethereum-client-c6708dd06dd) ist und nicht mehr gewartet wird.** Verwende es mit Vorsicht und wechsle lieber zu einer anderen Client-Implementierung.
@@ -162,7 +161,7 @@ Hyperledger Besu ist ein unternehmensorientierter Ethereum-Client für öffentli
 
 #### Erigon {#erigon}
 
-Erigon, früher bekannt als Turbo-Geth, ist eine Abspaltung von Go Ethereum, die auf Geschwindigkeit und Speicherplatzeffizienz ausgerichtet ist. Erigon ist eine komplett neu entwickelte Implementierung von Ethereum, die derzeit in Go geschrieben ist, aber auch in anderen Sprachen implementiert werden soll. Das Ziel von Erigon ist es, eine schnellere, modularere und optimierte Implementierung von Ethereum anzubieten. Es kann eine vollständige Synchronisierung des Archiv-Nodes mit weniger als 2 Tb Speicherplatz in weniger als 3 Tagen durchführen
+Erigon, früher bekannt als Erigon, ist eine Abspaltung von Go Ethereum, die auf Geschwindigkeit und Speicherplatzeffizienz ausgerichtet ist. Erigon ist eine komplett neu entwickelte Implementierung von Ethereum, die derzeit in Go geschrieben ist, aber auch in anderen Sprachen implementiert werden soll. Das Ziel von Erigon ist es, eine schnellere, modularere und optimierte Implementierung von Ethereum anzubieten. Es kann eine vollständige Synchronisierung des Archiv-Nodes mit weniger als 2 Tb Speicherplatz in weniger als 3 Tagen durchführen
 
 ### Synchronisationsmodi {#sync-modes}
 
@@ -174,7 +173,7 @@ Die Synchronisationsmodi stellen verschiedene Ansätze für diesen Prozess mit u
 
 Allgemeiner Überblick über die Synchronisierungsansätze, die in Mainnet-Ready-Clients verwendet werden:
 
-##### Full sync {#full-sync}
+##### Full sync
 
 Bei full sync werden alle Blöcke (einschließlich Headern, Transaktionen und Quittungen) heruntergeladen und der Zustand der Blockchain inkrementell generiert, indem jeder Block ab Genesis ausgeführt wird.
 
@@ -244,17 +243,15 @@ Genau wie jede andere Konfiguration kann es mit der Startup-Flag oder in der Kon
 
 ## Konsens-Clients (früher als Eth2-Clients bekannt) {#consensus-clients}
 
-Es gibt mehrere Konsens-Clients (früher als Eth2-Clients bekannt), die dazu da sind, die [Konsens-Upgrades](/upgrades/beacon-chain/) zu unterstützen. Sie betreiben die Beacon Chain und werden den Ausführungen nach [The Merge](/upgrades/merge/) einen Proof-of-Stake-Konsensmechanismus zur Verfügung stellen.
+Es gibt mehrere Konsens-Clients (früher als Eth2-Clients bekannt), die dazu da sind, die [Konsens-Upgrades](/roadmap/beacon-chain/) zu unterstützen. Sie betreiben die Beacon Chain und werden den Ausführungen nach [The Merge](/roadmap/merge/) einen Proof-of-Stake-Konsensmechanismus zur Verfügung stellen.
 
-[Konsens-Clients anschauen](/upgrades/get-involved/#clients)
-
-| Client                                                      | Sprache    | Betriebssysteme       | Netzwerke                             |
-| ----------------------------------------------------------- | ---------- | --------------------- | ------------------------------------- |
-| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, MacOS | Beacon Chain, Prater                  |
-| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, MacOS | Beacon Chain, Prater                  |
-| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, MacOS | Beacon Chain, Prater, Pyrmont         |
-| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, MacOS | Beacon Chain, Prater                  |
-| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Los        | Linux, Windows, MacOS | Beacon Chain, Gnosis, Prater, Pyrmont |
+| Client                                                      | Sprache    | Betriebssysteme       | Netzwerke                        |
+| ----------------------------------------------------------- | ---------- | --------------------- | -------------------------------- |
+| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, MacOS | Mainnet, Goerli                  |
+| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, MacOS | Mainnet, Goerli                  |
+| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, MacOS | Mainnet, Goerli, Pyrmont         |
+| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, MacOS | Mainnet, Goerli                  |
+| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Los        | Linux, Windows, MacOS | Mainnet, Gnosis, Goerli, Pyrmont |
 
 ## Hardware {#hardware}
 
@@ -309,7 +306,6 @@ Es gibt eine große Menge an Informationen über Ethereum-Clients im Internet. H
 
 - [Ethereum 101 - Part 2 - Understanding Nodes](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _– Wil Barnes, 13 February 2019_
 - [Running Ethereum Full Nodes: A Guide for the Barely Motivated](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _– Justin Leroux, 7 November 2019_
-- [Running an Ethereum Node](https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/) _– ETHHub, updated often_
 - [Analyzing the hardware requirements to be an Ethereum full validated node](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902) _– Albert Palau, 24 September 2018_
 - [Running a Hyperledger Besu Node on the Ethereum Mainnet: Benefits, Requirements, and Setup](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _– Felipe Faraggi, 7 May 2020_
 

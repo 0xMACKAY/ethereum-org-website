@@ -7,9 +7,8 @@ tags:
   - "front-end"
   - "JavaScript"
   - "web3.js"
-skill: iniciante
+skill: beginner
 lang: pt-br
-sidebar: true
 published: 2020-04-19
 source: EthereumDev
 sourceUrl: https://ethereumdev.io/calling-a-smart-contract-from-javascript/
@@ -113,7 +112,7 @@ daiToken.methods.balanceOf(senderAddress).call(função (err, res) {
 })
 ```
 
-Lembre-se que DAI ERC20 tem 18 decimais, o que significa que você precisa remover 18 zeros para obter o valor correto. uint256 are returned as strings as JavaScript does not handle big numeric values. Se não tiver certeza [de como lidar com grandes números em JS, verifique nosso tutorial sobre bignumber.js](https://ethereumdev.io/how-to-deal-with-big-numbers-in-javascript/).
+Lembre-se que DAI ERC20 tem 18 decimais, o que significa que você precisa remover 18 zeros para obter o valor correto. uint256 são retornados como cadeias de caracteres, pois o JavaScript não lida com grandes valores numéricos. Se não tiver certeza [de como lidar com grandes números em JS, verifique nosso tutorial sobre bignumber.js](https://ethereumdev.io/how-to-deal-with-big-numbers-in-javascript/).
 
 ## Enviar: enviando transação para uma função de contrato inteligente {#send-sending-a-transaction-to-a-smart-contract-function}
 
@@ -133,4 +132,4 @@ daiToken.methods
 
 A função de chamada retorna o hash da transação que será minerada no blockchain. No Ethereum, hashes de transação são previsívei. É assim que podemos obter o hash da transação antes de ela ser executada ([saiba aqui como os hashes são calculados](https://ethereum.stackexchange.com/questions/45648/how-to-calculate-the-assigned-txhash-of-a-transaction)).
 
-Como função só envia a transação para a blockchain, não podemos ver o resultado até sabermos quando ela é minerada e incluída na blockchain. No próximo tutorial, aprenderemos [como aguardar por uma transação que será executada na blockchain com base no hash dela ](https://ethereumdev.io/waiting-for-a-transaction-to-be-mined-on-ethereum-with-js/).
+Como função só envia a transação para a blockchain, não podemos ver o resultado até sabermos quando ela é minerada e incluída na blockchain. No próximo tutorial, aprenderemos [como aguardar por uma transação que será executada na blockchain com base no hash dela](https://ethereumdev.io/waiting-for-a-transaction-to-be-mined-on-ethereum-with-js/).

@@ -9,13 +9,12 @@ tags:
   - "智能合约"
   - "入门指南"
   - "部署"
-skill: 初学者
+skill: beginner
 lang: zh
-sidebar: true
 published: 2021-03-31
 ---
 
-如果您是区块链开发的初学者，还不知道如何开始，或者您只是想了解怎样部署智能合约并与之进行交互，这篇教程就是为您准备的。 通过使用虚拟钱包 ([Metamask](https://metamask.io/))、[Solidity](https://docs.soliditylang.org/en/v0.8.0/)、[Hardhat](https://hardhat.org/) 和 [Alchemy](https://alchemyapi.io/eth)（如果您不理解这些名词的含义，不用担心，后续我们会进行解释），我们将演示在 Ropsten 测试网络上创建并部署一个简单的智能合约。
+如果您是区块链开发的初学者，还不知道如何开始，或者您只是想了解怎样部署智能合约并与之进行交互，这篇教程就是为您准备的。 通过使用虚拟钱包 ([MetaMask](https://metamask.io/))、[Solidity](https://docs.soliditylang.org/en/v0.8.0/)、[Hardhat](https://hardhat.org/) 和 [Alchemy](https://alchemyapi.io/eth)（如果您不理解这些名词的含义，不用担心，后续我们会进行解释），我们将演示在 Ropsten 测试网络上创建并部署一个简单的智能合约。
 
 在本教程的第 2 部分，我们将学习在智能合约部署后如何与之进行交互，第 3 部分将学习如何在 Etherscan 上发布智能合约。
 
@@ -27,7 +26,7 @@ published: 2021-03-31
 
 ## 步骤 2：创建应用程序（和应用程序接口密钥） {#step-2}
 
-创建了 Alchemy 账户后，您可以通过创建应用程序来生成应用程序接口密钥。 我们可以用它向 Ropsten 测试网络发起请求。 如果您不熟悉测试网络，请查看[此页面](/developers/docs/networks/)。
+创建 Alchemy 帐户后，您可以通过创建应用程序来生成应用程序接口密钥。 我们可以用它向 Ropsten 测试网发出请求。 如果您不熟悉测试网络，请查看[此页面](/developers/docs/networks/)。
 
 1.  在 Alchemy 仪表板中，将鼠标悬停在导航栏中的“应用程序”上，单击“创建应用程序”并前往此页面。
 
@@ -37,31 +36,31 @@ published: 2021-03-31
 
 ![创建应用程序视图 hello world](./create-app-view-hello-world.png)
 
-3. 点击“创建应用程序”即可！ 您的应用程序应该会出现在下面的表格中。
+3. 点击“Create app”，完成！ 您的应用程序应该就会出现在下面的表格中。
 
 ## 步骤 3：创建一个以太坊账户（地址） {#step-3}
 
-我们需要一个以太坊帐户来发送和接收交易。 在本教程中，我们将使用 MetaMask——浏览器中的虚拟钱包，用来管理您的以太坊账户地址。 关于[交易](/developers/docs/transactions/)的详细信息。
+我们需要一个以太坊帐户来发送和接收交易。 在本教程中，我们将使用 MetaMask，它是浏览器中的虚拟钱包，用来管理您的以太坊账户地址。 关于[交易](/developers/docs/transactions/)的详细信息。
 
-您可以[在这里](https://metamask.io/download.html)免费下载并创建一个 Metamsk 账户。 创建账户时，或者如果您已经有一个账户时，确保切换到右上方的“Ropsten 测试网络”（这样我们就不会用实际货币进行交易）。
+您可以点击[此处](https://metamask.io/download.html)免费下载并创建一个 MetaMask 账户。 创建账户时，或者如果您已经有一个账户时，确保切换到右上方的“Ropsten 测试网络”（这样我们就不会用实际货币进行交易）。
 
 ![metask ropsten 示例](./metamask-ropsten-example.png)
 
 ## 步骤 4：从水龙头添加以太币 {#step-4}
 
-为了将我们的智能合约部署到测试网络，我们需要一些虚拟以太币。 要获得以太币，您可以访问 [Ropsten 水龙头](https://faucet.dimensions.network/)，输入您的 Ropsten 帐户地址，然后点击“发送 Ropsten 以太币”。 由于网络原因，您接收虚拟以太币可能需要一些时间。 您应该会很快在您的 MetaMask 帐户中看到以太币！
+为了将我们的智能合约部署到测试网络，我们需要一些虚拟以太币。 要获取以太币，您可以转到 [Ropsten 水龙头](https://faucet.dimensions.network/)并输入您的 Ropsten 帐户地址，然后点击“Send Ropsten Eth”。 由于网络原因，您接收虚拟以太币可能需要一些时间。 您应该会很快在您的 MetaMask 帐户中看到以太币！
 
 ## 步骤 5：查看账户余额 {#step-5}
 
-为了核实我们的余额，可以使用 [Alchemy 的创作者工具](https://composer.alchemyapi.io?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D)发出 [eth_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) 请求。 这将返回我们钱包中的以太币金额。 输入您的 Metamask 帐户地址并单击“发送请求”后，您应该会看到这样的响应：
+为了核查我们账户中有余额，我们使用 [Alchemy composer 工具](https://composer.alchemyapi.io?composer_state=%7B%22network%22%3A0%2C%22methodName%22%3A%22eth_getBalance%22%2C%22paramValues%22%3A%5B%22%22%2C%22latest%22%5D%7D)发出 [eth_getBalance](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_getbalance) 请求。 这将返回我们钱包中的以太币数量。 输入您的 MetaMask 帐户地址并点击“Send Request”后，您应该会看到这样的响应：
 
 ```json
 { "jsonrpc": "2.0", "id": 0, "result": "0x2B5E3AF16B1880000" }
 ```
 
-> **注意：**结果以 wei 为单位，而非 ETH。 Wei 是以太坊最小的面额。 将 wei 转换为 ETH 的公式为：1 eth = 10<sup>18</sup> wei。 因此，如果我们将 0x2B5E3AF16B1880000 转换为十进制，我们会得到 5\*10¹⁸，即 5 ETH。
+> **注意：**结果以 wei 为单位，而非 ETH。 Wei 是以太币的最小计量单位。 将 wei 转换为 ETH 的公式为：1 eth = 10<sup>18</sup> wei。 因此，如果我们将 0x2B5E3AF16B1880000 转换为十进制，我们会得到 5\*10¹⁸，即 5 ETH。
 >
-> 呼！ 我们的虚拟货币到账了<Emoji text=":money_mouth_face:" size={1} />。
+> 哦！ 我们的虚拟货币到账了<Emoji text=":money_mouth_face:" size={1} />。
 
 ## 步骤 6：初始化我们的项目 {#step-6}
 
@@ -109,9 +108,9 @@ About to write to /Users/.../.../.../hello-world/package.json:
 
 ## 步骤 7：[Hardhat](https://hardhat.org/getting-started/#overview){#step-7}
 
-安全帽是一个用于编译、部署、测试和调试以太坊软件的开发环境。 在部署到实时链上之前，它帮助开发者在本地构建智能合约和去中心化应用程序。
+安全帽是一个用于编译、部署、测试和调试以太坊软件的开发环境。 它帮助开发者在本地构建智能合约和去中心化应用程序并部署到实时链上。
 
-在我们的 `Hello-world` 项目中运行：
+在我们的 `hello-world` 项目中运行：
 
 ```
 npm install --save-dev hardhat
@@ -158,7 +157,7 @@ mkdir contracts
 mkdir scripts
 ```
 
-- `contracts/` 是保存我们的 Hello world 智能合约代码文件的位置
+- `contracts/` 是保存我们的 hello world 智能合约代码文件的位置
 - `scripts/` 是我们存放脚本的位置，用于部署我们的合约和与之交互。
 
 ## 步骤 10：编写合约 {#step-10}
@@ -200,9 +199,9 @@ contract HelloWorld {
 
 这是一个非常简单的智能合约，创建时存储了一条消息，而且可以通过调用 `update` 功能来更新消息。
 
-## 步骤 11：将 Metamask 和 Alchemy 连接至您的项目 {#step-11}
+## 步骤 11：将 MetaMask 和 Alchemy 连接至您的项目 {#step-11}
 
-我们创建了 Metamask 钱包、Alchemy 帐户，并且编写了一个智能合约，现在是将这三者连起来的时候了。
+我们创建了 MetaMask 钱包、Alchemy 帐户，并且编写了一个智能合约，现在是将这三者连起来的时候了。
 
 从虚拟钱包发送的每笔交易都需要使用您独有的私钥签名。 为了给程序提供此项许可，我们可以安全地将私钥（和 Alchemy 应用程序接口密钥）存储在一个环境文件中。
 
@@ -214,7 +213,7 @@ contract HelloWorld {
 npm install dotenv --save
 ```
 
-然后在我们的项目根目录中创建 `.env` 文件，并将您的 Metamask 私钥和超文本传输协议 Alchemy 应用程序接口网址加入其中。
+然后在我们的项目根目录中创建 `.env` 文件，并将您的 MetaMask 私钥和超文本传输协议 Alchemy 应用程序接口网址加入其中。
 
 - 遵循[这些说明](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)导出您的私钥
 - 请从下方获取超文本传输协议 Alchemy 应用程序接口网址
@@ -232,8 +231,8 @@ PRIVATE_KEY = "your-metamask-private-key"
 
 为了将这些变量和代码连接，我们将在步骤 13 中调用 `hardhat.config.js` 文件中的这些变量。
 
-<InfoBanner isWarning={true}>
-不要提交 <code>.env</code>！ 请确保永远不要与任何人共享或公开您的 <code>.env</code> 文件，因为这样做会泄露您的秘密。 如果您使用版本控制，请将您的 <code>.env</code> 添加到 <a href="https://git-scm.com/docs/gitignore">gitignore</a> 文件中。
+<InfoBanner isWarning>
+不要提交 <code>.env</code>！ 请确保永远不要与任何人共享或公开您的 <code>.env</code> 文件，因为这样做会泄露您的私钥。 如果您使用版本控制，请将您的 <code>.env</code> 添加到 <a href="https://git-scm.com/docs/gitignore">gitignore</a> 文件中。
 </InfoBanner>
 
 ## 步骤 12：安装 Ethers.js {#step-12-install-ethersjs}
@@ -294,7 +293,7 @@ npx hardhat compile
 
 合约已经写完，配置文件也准备妥当，现在是写合约部署脚本的时候了。
 
-转到 `scripts/` 文件夹，创建一个名为 `deplos.js` 的新文件，在其中添加以下内容：
+转到 `scripts/` 文件夹，创建一个名为 `deploy.js` 的新文件，在其中添加以下内容：
 
 ```
 async function main() {
@@ -340,11 +339,11 @@ npx hardhat run scripts/deploy.js --network ropsten
 Contract deployed to address: 0x6cd7d44516a20882cEa2DE9f205bF401c0d23570
 ```
 
-如果我们访问 [Ropsten etherscan](https://ropsten.etherscan.io/) 并搜索我们的合约地址，应该能够看到它已经成功部署。 交易将类似以下︰
+如果我们访问 [Ropsten etherscan](https://ropsten.etherscan.io/) 并搜索我们的合约地址，应该能够看到它已经成功部署。 交易将类似以下：
 
 ![etherscan 合约](./etherscan-contract.png)
 
-`From` 地址应该和您的 Metamask 账户地址相同，而 To 地址会显示“Contract Creation”，但如果我们点击进入交易，我们会在 `To` 字段看到我们的合约地址：
+`From` 地址应该和您的 MetaMask 账户地址相同，而 To 地址会显示“Contract Creation”，但如果我们点击进入交易，我们会在 `To` 字段看到我们的合约地址：
 
 ![etherscan 交易](./etherscan-transaction.png)
 
@@ -352,8 +351,8 @@ Contract deployed to address: 0x6cd7d44516a20882cEa2DE9f205bF401c0d23570
 
 为了更深入了解到底发生了什么，我们转到 [Alchemy 仪表板](https://dashboard.alchemyapi.io/explorer)中的 Explorer 选项卡。 如果您有多个 Alchemy 应用程序，请确保按应用程序筛选，然后选择“Hello World”。 ![hello world 浏览器](./hello-world-explorer.png)
 
-在这里您会看到一系列的 JSON-RPC 调用，都是在我们调用 `.deploy()` 函数时，Hardhat/Ethers 替我们在后端完成的。 这里有两项重要调用，一个是 [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction)，这是实际将我们的合约写入 Ropsten 链的请求， 另一个是 [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash)，此为读取有关我们交易给定哈希值的请求（即 交易时的典型模式）。 如需了解更多关于发送交易的信息，请查看关于[使用 Web3 发送交易](/developers/tutorials/sending-transactions-using-web3-and-alchemy/)的本教程
+在这里您会看到一系列的 JSON-RPC 调用，都是在我们调用 `.deploy()` 函数时，Hardhat/Ethers 替我们在后端完成的。 这里有两项重要调用，一个是 [`eth_sendRawTransaction`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_sendrawtransaction)，这是实际将我们的合约写入 Ropsten 链的请求，另一个是 [`eth_getTransactionByHash`](https://docs.alchemyapi.io/alchemy/documentation/alchemy-api-reference/json-rpc#eth_gettransactionbyhash)，此为读取有关我们交易给定哈希值的请求（即 交易时的典型模式）。 如需了解更多关于发送交易的信息，请查看关于[使用 Web3 发送交易](/developers/tutorials/sending-transactions-using-web3-and-alchemy/)的本教程
 
-这是本教程第 1 部分的全部内容， 在第 2 部分中，我们将更新我们的初始信息，从而[与我们的智能合约交互](https://docs.alchemyapi.io/alchemy/tutorials/hello-world-smart-contract#part-2-interact-with-your-smart-contract)；在第 3 部分，我们将[在 Etherscan 上发布我们的智能合约](https://docs.alchemyapi.io/alchemy/tutorials/hello-world-smart-contract#optional-part-3-publish-your-smart-contract-to-etherscan)，使得每个人都会知道如何与之交互。
+这是本教程第 1 部分的全部内容，在第 2 部分中，我们将更新我们的初始信息，从而[与我们的智能合约交互](https://docs.alchemyapi.io/alchemy/tutorials/hello-world-smart-contract#part-2-interact-with-your-smart-contract)；在第 3 部分，我们将[在 Etherscan 上发布我们的智能合约](https://docs.alchemyapi.io/alchemy/tutorials/hello-world-smart-contract#optional-part-3-publish-your-smart-contract-to-etherscan)，使得每个人都会知道如何与之交互。
 
 **想了解更多有关 Alchemy 的信息吗？ 查看我们的[网站](https://alchemyapi.io/eth)。 不想错过更新？ [在这里](https://www.alchemyapi.io/newsletter)订阅我们的新闻通讯！ 请务必关注我们的 [Twitter](https://twitter.com/alchemyplatform) 并加入我们的 [Discord](https://discord.com/invite/u72VCg3)**。

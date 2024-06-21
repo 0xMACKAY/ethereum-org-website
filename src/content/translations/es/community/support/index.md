@@ -1,7 +1,6 @@
 ---
 title: Soporte técnico de Ethereum
 description: Explicación de cómo obtener soporte técnico en el ecosistema Ethereum.
-sidebar: true
 lang: es
 ---
 
@@ -21,7 +20,7 @@ Comprender la naturaleza descentralizada de Ethereum es vital, ya que todo aquel
   Aprenda los fundamentos de Ethereum.
 </DocLink>
 
-A pesar de la falta de soporte oficial, muchos grupos, comunidades y proyectos del ecosistema Ethereum están dispuestos a ayudar.
+A pesar de la falta de apoyo oficial, muchos grupos, comunidades y proyectos en todo el ecosistema Ethereum están deseosos de ayudar, y puede encontrar mucha información y recursos útiles en esta página. ¿Todavía le surgen algunas preguntas? Entonces, únase al chat [Discord de Ethereum.org](/discord/) e intentaremos ayudarle.
 
 ## Soporte para la cartera {#wallet-support}
 
@@ -58,6 +57,7 @@ He aquí algunos ejemplos:
 - [Hardhat](https://discord.gg/xtrMGhmbfZ)
 - [Truffle](https://discord.gg/8uKcsccEYE)
 - [Alchemy](http://alchemy.com/discord)
+- [Tenderly](https://discord.gg/fBvDJYR)
 
 ## Ejecución de un nodo {#node-support}
 
@@ -107,4 +107,8 @@ Debido a la demanda de la red, las transacciones en Ethereum pueden a veces esta
 
 #### ¿Cómo puedo minar Ethereum? {#mining-ethereum}
 
-No recomendamos comprar equipo destinado a minar si aún no ha minado en Ethereum. Se prevé que en el segundo trimestre de 2022, llegue [la fusión](/upgrades/merge/), en la que Ethereum cambiará de prueba de trabajo [PoW en inglés] a prueba de participación [PoS en inglés]. Este cambio significa que ya no se podrá minar Ethereum. Si todavía le interesa minar Ethereum, puede pedir ayuda a comunidades mineras, como [/r/EtherMining](https://www.reddit.com/r/EtherMining/).
+Ya no se puede minar en Ethereum. La minería se desactivó cuando Ethereum pasó de la prueba de trabajo a la prueba de participación. Ahora, en lugar de mineros, Ethereum tiene validadores. Los validadores apuestan ETH y reciben recompensas por asegurar la red.
+
+#### ¿Cómo puedo convertirme en participante/validador? {#become-validator}
+
+Para convertirse en validador, debe apostar 32 ETH en el contrato de depósito de Ethereum y configurar un nodo de validación. Hay más información disponible en nuestras [páginas de participación](/staking) y en [la plataforma de lanzamiento de participación](https://launchpad.ethereum.org/).

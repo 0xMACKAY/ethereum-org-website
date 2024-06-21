@@ -1,61 +1,30 @@
-import { IntlShape } from "gatsby-plugin-intl"
-
 import type { Lang } from "./languages"
+import type { Direction } from "../types"
 
-import defaultStrings from "../intl/en.json"
+import i18nConfigs from "../../i18n/config.json"
 
-export type TranslationKey = keyof typeof defaultStrings
-
-const consoleError = (message: string): void => {
-  const { NODE_ENV } = process.env
-  if (NODE_ENV === "development") {
-    console.error(message)
-  }
-}
-
-// Returns the en.json value
-export const getDefaultMessage = (key: TranslationKey): string => {
-  const defaultMessage = defaultStrings[key]
-  if (defaultMessage === undefined) {
-    consoleError(
-      `No key "${key}" in en.json. Cannot provide a default message.`
-    )
-  }
-  return defaultMessage || ""
-}
+export type TranslationKey = string
 
 export const isLangRightToLeft = (lang: Lang): boolean => {
-  return lang === "ar" || lang === "fa"
+  const langConfig = i18nConfigs.filter((language) => language.code === lang)
+
+  if (!langConfig.length)
+    throw new Error("Language code not found in isLangRightToLeft")
+
+  return langConfig[0].langDir === "rtl"
 }
 
-export const translateMessageId = (
-  id: TranslationKey,
-  intl: IntlShape
-): string => {
-  if (!id) {
-    consoleError(`No id provided for translation.`)
-    return ""
+export const getDirection = (lang?: Lang): Direction => {
+  if (!lang) {
+    return "auto"
   }
-  if (!intl || !intl.formatMessage) {
-    consoleError(`Invalid/no intl provided for translation id ${id}`)
-    return ""
-  }
-  const translation = intl.formatMessage({
-    id,
-    defaultMessage: getDefaultMessage(id),
-  })
-  if (translation === id) {
-    consoleError(
-      `Intl ID string "${id}" has no match. Default message of "" returned.`
-    )
-    return ""
-  }
-  return translation
+
+  return isLangRightToLeft(lang) ? "rtl" : "ltr"
 }
 
 // Overwrites the default Persian numbering of the Farsi language to use Hindu-Arabic numerals (0-9)
 // Context: https://github.com/ethereum/ethereum-org-website/pull/5490#pullrequestreview-892596553
-export const getLocaleForNumberFormat = (locale: Lang) => {
+export const getLocaleForNumberFormat = (locale: Lang): Lang => {
   if (locale === "fa") {
     return "en"
   }

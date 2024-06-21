@@ -2,7 +2,6 @@
 title: Évolutivité
 description: Introduction aux différentes options pour le passage à l'échelle actuellement en cours de développement par la communauté Ethereum.
 lang: fr
-sidebar: true
 sidebarDepth: 3
 ---
 
@@ -10,13 +9,13 @@ sidebarDepth: 3
 
 Le nombre grandissant d'utilisateurs d'Ethereum révèle certaines limites de capacité de la blockchain. Cela a augmenté le coût de l'utilisation du réseau, impliquant le besoin de « solutions d'évolutivité ». De nombreuses solutions ont été étudiées, testées et mises en œuvre qui adoptent différentes approches pour atteindre des objectifs similaires.
 
-L'objectif principal de l'évolutivité est d'augmenter la vitesse de transaction (finalisation plus rapide) et le débit de la transaction (nombre élevé de transactions par seconde), sans sacrifier la décentralisation ou la sécurité (en savoir plus sur la [vision Ethereum](/upgrades/vision/)). Sur la blockchain Ethereum de la couche 1, une forte demande entraîne un ralentissement des transactions et des prix de [gaz](/developers/docs/gas/) non viables. L'augmentation de la capacité du réseau en termes de vitesse et de débit est fondamentale pour l'adoption significative et massive d'Ethereum.
+L'objectif principal de l'évolutivité est d'augmenter la vitesse de transaction (finalisation plus rapide) et le débit de la transaction (nombre élevé de transactions par seconde), sans sacrifier la décentralisation ou la sécurité (en savoir plus sur la [vision Ethereum](/roadmap/vision/)). Sur la blockchain Ethereum de la couche 1, une forte demande entraîne un ralentissement des transactions et des prix de [gaz](/developers/docs/gas/) non viables. L'augmentation de la capacité du réseau en termes de vitesse et de débit est fondamentale pour l'adoption significative et massive d'Ethereum.
 
 Bien que la vitesse et le débit soient importants, il est essentiel que les solutions de mise à l'échelle permettent d'atteindre ces objectifs en restant décentralisées et sécurisées. Le maintien d'une faible barrière d'entrée pour les opérateurs de nœuds est essentiel pour empêcher une progression vers une puissance informatique centralisée et peu sûre.
 
 Conceptuellement, nous catégorisons d'abord l'évolutivité en chaîne puis celle hors chaîne.
 
-## Prérequis {#prerequisites}
+## Pré-requis {#prerequisites}
 
 Vous devez avoir une bonne compréhension de tous les sujets fondamentaux. La mise en œuvre de solutions d'évolutivité est avancée, car la technologie est moins éprouvée et continue d'être étudiée et développée.
 
@@ -28,7 +27,7 @@ Cette méthode de mise à l’échelle nécessite des modifications du protocole
 
 La fragmentation est le processus de fractionnement horizontal d'une base de données pour répartir la charge. Dans le cadre d'Ethereum, cette fragmentation permettra de réduire l'encombrement du réseau en augmentant le nombre de transactions par seconde grâce à la création de nouvelles chaînes, appelées « fragments ». Cela allègera également la charge pour chaque validateur qui ne sera plus tenu de traiter l’intégralité de toutes les transactions sur le réseau.
 
-En savoir plus sur [la fragmentation](/upgrades/shard-chains/).
+En savoir plus sur [la fragmentation](/roadmap/danksharding/).
 
 ## Mise à l'echelle hors de la chaîne {#off-chain-scaling}
 
@@ -38,7 +37,7 @@ Les solutions hors chaîne sont implémentées séparément du réseau principal
 
 Cette catégorie de solutions hors chaîne tire sa sécurité du réseau principal Ethereum.
 
-La couche 2 est un terme collectif désignant les solutions conçues pour aider à faire évoluer votre application en gérant les transactions en dehors du réseau principal Ethereum (couche 1) tout en tirant parti du modèle robuste de sécurité décentralisé du réseau principal. La vitesse des transactions est réduite lorsque le réseau est occupé, ce qui rend l’expérience utilisateur médiocre pour certains types de dapps. Et plus le réseau est fréquenté, plus le prix du carburant augmente, car les expéditeurs de transactions cherchent à surenchérir. Cela peut rendre l'utilisation d'Ethereum très onéreuse.
+La couche 2 est un terme collectif désignant les solutions conçues pour aider à faire évoluer votre application en gérant les transactions en dehors du réseau principal Ethereum (couche 1) tout en tirant parti du modèle robuste de sécurité décentralisé du réseau principal. La vitesse des transactions est réduite lorsque le réseau est occupé, ce qui rend l’expérience utilisateur médiocre pour certains types de dapps. Et plus le réseau est fréquenté, plus le prix du gaz augmente, car les expéditeurs de transactions cherchent à surenchérir. Cela peut rendre l'utilisation d'Ethereum très onéreuse.
 
 La plupart des solutions de la couche 2 sont centrées autour d'un serveur ou d'un groupe de serveurs, chacun pouvant être appelé nœud, validateur, opérateur, séquenceur, producteur de blocs ou un terme similaire. Selon l’implémentation, ces nœuds de couche 2 peuvent être gérés par les individus, les entreprises ou les entités qui les utilisent, ou par un opérateur tiers, ou par un large groupe de personnes (similaire au réseau principal). D’une manière générale, les transactions sont soumises à ces nœuds de couche 2 au lieu d’être soumises directement à la couche 1 (Mainnet). Pour certaines solutions, l’instance de couche 2 les regroupe ensuite en groupes avant de les ancrer à la couche 1, après quoi elles sont sécurisées par la couche 1 et ne peuvent pas être modifiées. La façon détaillée dont cela se réalise varie considérablement entre les différentes technologies et implémentations de la couche 2.
 
@@ -47,7 +46,7 @@ Une instance spécifique de couche 2 peut être soit ouverte et partagée par de
 #### Pourquoi la couche 2 est-elle nécessaire ? {#why-is-layer-2-needed}
 
 - L’augmentation du nombre de transactions par seconde améliore considérablement l’expérience utilisateur et réduit la congestion du réseau sur le réseau principal d'Ethereum.
-- Les transactions sont regroupées en une seule transaction vers le réseau principal d'Ethereum, ce qui réduit les frais de carburant pour les utilisateurs, rendant ainsi Ethereum plus inclusif et accessible aux gens du monde entier.
+- Les transactions sont regroupées en une seule transaction vers le réseau principal d'Ethereum, ce qui réduit les frais de gaz pour les utilisateurs, rendant ainsi Ethereum plus inclusif et accessible aux gens du monde entier.
 - Toute mise à jour d'évolutivité ne devrait pas se faire au détriment de la décentralisation ou de la sécurité. La couche 2 s'appuie sur Ethereum.
 - Il existe des réseaux de couche 2 spécifiques à une application qui apportent leur propre ensemble de gains d'efficacité lorsqu’ils travaillent avec des actifs à grande échelle.
 
@@ -89,7 +88,7 @@ En savoir plus sur [Validium](/developers/docs/scaling/validium/).
 - Plusieurs solutions peuvent aider à réduire la congestion globale sur une partie du réseau et à prévenir les points de défaillance uniques.
 - Le tout est plus grand que la somme de ses parties. Différentes solutions peuvent exister et fonctionner en harmonie, permettant un effet exponentiel sur la vitesse et le débit des transactions futures.
 - Toutes les solutions ne nécessitent pas d’utiliser directement l’algorithme de consensus Ethereum, et les alternatives peuvent offrir des avantages qui seraient autrement difficiles à obtenir.
-- Aucune solution de mise à l'échelle n'est suffisante pour réaliser la [vision Ethereum](/upgrades/vision/).
+- Aucune solution de mise à l'échelle n'est suffisante pour réaliser la [vision Ethereum](/roadmap/vision/).
 
 ## Davantage qu'un apprenant visuel ? {#visual-learner}
 

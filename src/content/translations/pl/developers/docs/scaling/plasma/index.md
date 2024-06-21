@@ -2,7 +2,6 @@
 title: Łańcuchy plazmy
 description: Wprowadzenie do łańcuchów plazmowych jako rozwiązania skalowania obecnie wykorzystywanego przez społeczność Ethereum.
 lang: pl
-sidebar: true
 incomplete: true
 sidebarDepth: 3
 ---
@@ -27,12 +26,10 @@ Musisz dobrze się orientować we wszystkich podstawowych tematach i mieć zaawa
 Wiele projektów dostarcza implementacje Plasma, które można zintegrować z własnymi aplikacjami zdecentralizowanymi:
 
 - [Sieć OMG](https://omg.network/)
-- [Polygon ](https://polygon.technology/), [poprzednio Matic Network](https://matic.network/)
+- [Polygon](https://polygon.technology/), [poprzednio Matic Network](https://matic.network/)
 - [Gluon](https://gluon.network/)
 - [LeapDAO](https://ipfs.leapdao.org/)
 
 ## Dalsza lektura {#further-reading}
-
-- [EthHub w Plasma](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/plasma/)
 
 _Znasz jakieś zasoby społeczności, które Ci pomogły? Wyedytuj tę stronę i dodaj je!_

@@ -2,7 +2,6 @@
 title: Ethereum pour les développeurs Go
 description: Apprendre à développer pour Ethereum avec des projets et des outils basés sur Go
 lang: fr
-sidebar: true
 incomplete: true
 ---
 
@@ -34,11 +33,11 @@ Besoin d’une approche plus élémentaire ? Consultez [ethereum.org/learn](/le
 ## Articles et documentation de niveau intermédiaire {#intermediate-articles-and-docs}
 
 - [Documentation Go Ethereum](https://geth.ethereum.org/docs/) - _Documentation Ethereum officielle pour Go_
-- [Guide du programmeur Turbo-Geth](https://github.com/ledgerwatch/turbo-geth/blob/master/docs/programmers_guide/guide.md) - _Guide illustré incluant l'arborescence d'état, les multipreuves et le traitement des transactions_
-- [Turbo-Geth et Ethereum sans état](https://youtu.be/3-Mn7OckSus?t=394) - _Conférence de la communauté Ethereum 2020 (EthCC 3)_
-- [Turbo-Geth: optimiser les clients Ethereum](https://www.youtube.com/watch?v=CSpc1vZQW2Q) - _Devcon 4 - 2018 _
+- [Guide du programmeur Erigon](https://github.com/ledgerwatch/erigon/blob/devel/docs/programmers_guide/guide.md) - _Guide illustré incluant l'arborescence d'état, les multipreuves et le traitement des transactions_
+- [Erigon et Ethereum sans état](https://youtu.be/3-Mn7OckSus?t=394) - _Conférence de la Communauté Ethereum 2020 (EthCC 3)_
+- [Erigon : optimiser les clients Ethereum](https://www.youtube.com/watch?v=CSpc1vZQW2Q) - _2018 Devcon 4_
 - [GoDoc Go Ethereum](https://godoc.org/github.com/ethereum/go-ethereum)
-- [Créer un dApp avec Geth dans Go](https://kauri.io/#collections/A%20Hackathon%20Survival%20Guide/creating-a-dapp-in-go-with-geth/)
+- [Créer une dApp avec Geth dans Go](https://kauri.io/#collections/A%20Hackathon%20Survival%20Guide/creating-a-dapp-in-go-with-geth/)
 - [Travailler avec le réseau privé Ethereum avec Golang et Geth](https://myhsts.org/tutorial-learn-how-to-work-with-ethereum-private-network-with-golang-with-geth.php)
 - [Test unitaire des contrats Solidity avec Go dans Ethereum](https://medium.com/coinmonks/unit-testing-solidity-contracts-on-ethereum-with-go-3cc924091281)
 - [Référence rapide pour utiliser Geth en tant que bibliothèque](https://medium.com/coinmonks/web3-go-part-1-31c68c68e20e)
@@ -55,16 +54,17 @@ Besoin d’une approche plus élémentaire ? Consultez [ethereum.org/learn](/le
 
 - [Geth/Go Ethereum](https://github.com/ethereum/go-ethereum) - _Implémentation officielle du protocole Ethereum_
 - [Go Ethereum Code Analysis](https://github.com/ZtesoftCS/go-ethereum-code-analysis) - _Revue et analyse du code source Go Ethereum_
-- [Turbo-Geth](https://github.com/ledgerwatch/turbo-geth) - _Dérivé plus rapide de Go Thereum_
+- [Erigon](https://github.com/ledgerwatch/erigon) - _Dérivé plus rapide de Go Ethereum, focalisé sur les nœuds d'archives_
 - [Golem](https://github.com/golemfactory/golem) - _Golem crée un marché mondial de distribution de puissance informatique_
 - [Quorum](https://github.com/jpmorganchase/quorum) - _Implémentation d'Ethereum soumise à droit d'accès, prenant en charge la confidentialité des données_
-- [Prysm](https://github.com/prysmaticlabs/prysm) - _Implémentation d'Ethereum « Serenity » 2.0 Go _
+- [Prysm](https://github.com/prysmaticlabs/prysm) - _Implémentation d'Ethereum « Serenity » 2.0 Go_
 - [Eth Tweet](https://github.com/yep/eth-tweet) - _Twitter décentralisé&nbsp;: service de microblogging fonctionnant sur la blockchain Ethereum_
 - [Plasma MVP Golang](https://github.com/kyokan/plasma) - _Implémentation et extension Golang de la spécification Minimum Viable Plasma_
 - [Open Ethereum Mining Pool](https://github.com/sammy007/open-ethereum-pool) - _Groupe de minage Ethereum en open source_
-- [Ethereum HD Wallet](https://github.com/miguelmota/go-ethereum-hdwallet) - _Dérivations de portefeuilles HD (Hierarchical Deterministic) Ethereum en Go_
+- [Ethereum HD Wallet](https://github.com/miguelmota/go-ethereum-hdwallet) - _Dérivations de portefeuilles HD (Hierarchical Deterministic, ou déterministe hiérarchique) Ethereum en Go_
 - [Multi Geth](https://github.com/multi-geth/multi-geth) - _Support pour de nombreux types de réseaux Ethereum_
 - [Geth Light Client](https://github.com/zsfelfoldi/go-ethereum/wiki/Geth-Light-Client) - _Implémentation Geth du LES (Light Client Subprotocol) Ethereum_
+- [Ethereum Golang SDK](https://github.com/everFinance/goether) - _Une simple implémentation et des utilitaires pour les portefeuilles Ethereum dans Golang_
 
 Vous cherchez davantage de ressources ? Consultez [ethereum.org/developers.](/developers/)
 
@@ -81,4 +81,4 @@ Vous cherchez davantage de ressources ? Consultez [ethereum.org/developers.](/d
 ## Autres ressources {#other-aggregated-lists}
 
 - [Génial Ethereum](https://github.com/btomashvili/awesome-ethereum)
-- [Consensys : une liste définitive des outils pour les développeurs d'Ethereum](https://media. consensys. net/an-definitive-list-of-ethereum-developer-tools-2159ce865974) | [Source GitHub](https://github. com/ConsenSys/ethereum-developer-tools-list)
+- [Consensys: une liste définitive des outils pour les développeurs d'Ethereum](https://media.consensys.net/an-definitive-list-of-ethereum-developer-tools-2159ce865974) | [Source GitHub](https://github.com/ConsenSys/ethereum-developer-tools-list)

@@ -1,8 +1,7 @@
 ---
-title: Mutabakat mekanizmaları
+title: Konsensus mekanizmaları
 description: Dağıtılmış sistemlerde bulunan mutabakat protokolleri ve bu protokollerin Ethereum'daki rolü hakkında açıklama.
 lang: tr
-sidebar: true
 incomplete: true
 ---
 
@@ -10,7 +9,7 @@ Ethereum gibi, özünde dağıtılmış sistemler olan blok zincirlerinde ağ d�
 
 Mutabakat mekanizmaları doğrudan bir dapp inşa etmeyle bağlantılı olmasa da, onları anlamak gaz ücretleri ve işlem zamanları gibi siz ve kullanıcı deneyiminizle ilgili konseptleri aydınlatacaktır.
 
-## Ön Koşullar {#prerequisites}
+## Ön koşullar {#prerequisites}
 
 Bu sayfayı daha iyi anlamak için önce [Ethereum'a Giriş](/developers/docs/intro-to-ethereum/) metnimizi okumanızı öneririz.
 
@@ -76,7 +75,7 @@ Bir **zincir seçim kuralı** hangi zincirin "doğru" zincir olduğuna karar ver
 
 İş ispatı ve en uzun zincir kuralının kombinasyonu "Nakamoto Mutabakatı" olarak bilinir.
 
-[İşaret zinciri](/upgrades/beacon-chain/), hisse ispatı tabanlı [Casper the Friendly Finality Gadget](https://arxiv.org/abs/1710.09437) adlı bir mutabakat mekanizması kullanır.
+[İşaret zinciri](/roadmap/beacon-chain/), hisse ispatı tabanlı [Casper the Friendly Finality Gadget](https://arxiv.org/abs/1710.09437) adlı bir mutabakat mekanizması kullanır.
 
 ## Daha fazla bilgi {#further-reading}
 

@@ -2,7 +2,6 @@
 title: Recursive-length prefix (RLP) serialization
 description: A definition of the rlp encoding in Ethereum's execution layer.
 lang: en
-sidebar: true
 sidebarDepth: 2
 ---
 
@@ -33,38 +32,38 @@ Note that in the context of the rest of this page, 'string' means "a certain num
 
 RLP encoding is defined as follows:
 
-- For a single byte whose value is in the `[0x00, 0x7f]` range, that byte is its own RLP encoding.
-- Otherwise, if a string is 0-55 bytes long, the RLP encoding consists of a single byte with value **0x80** plus the length of the string followed by the string. The range of the first byte is thus `[0x80, 0xb7]`.
-- If a string is more than 55 bytes long, the RLP encoding consists of a single byte with value **0xb7** plus the length in bytes of the length of the string in binary form, followed by the length of the string, followed by the string. For example, a length-1024 string would be encoded as `\xb9\x04\x00` followed by the string. The range of the first byte is thus `[0xb8, 0xbf]`.
-- If the total payload of a list (i.e. the combined length of all its items being RLP encoded) is 0-55 bytes long, the RLP encoding consists of a single byte with value **0xc0** plus the length of the list followed by the concatenation of the RLP encodings of the items. The range of the first byte is thus `[0xc0, 0xf7]`.
-- If the total payload of a list is more than 55 bytes long, the RLP encoding consists of a single byte with value **0xf7** plus the length in bytes of the length of the payload in binary form, followed by the length of the payload, followed by the concatenation of the RLP encodings of the items. The range of the first byte is thus `[0xf8, 0xff]`.
+- For a single byte whose value is in the `[0x00, 0x7f]` (decimal `[0, 127]`) range, that byte is its own RLP encoding.
+- Otherwise, if a string is 0-55 bytes long, the RLP encoding consists of a single byte with value **0x80** (dec. 128) plus the length of the string followed by the string. The range of the first byte is thus `[0x80, 0xb7]` (dec. `[128, 183]`).
+- If a string is more than 55 bytes long, the RLP encoding consists of a single byte with value **0xb7** (dec. 183) plus the length in bytes of the length of the string in binary form, followed by the length of the string, followed by the string. For example, a 1024 byte long string would be encoded as `\xb9\x04\x00` (dec. `185, 4, 0`) followed by the string. Here, `0xb9` (183 + 2 = 185) as the first byte, followed by the 2 bytes `0x0400` (dec. 1024) that denote the length of the actual string. The range of the first byte is thus `[0xb8, 0xbf]` (dec. `[184, 191]`).
+- If the total payload of a list (i.e. the combined length of all its items being RLP encoded) is 0-55 bytes long, the RLP encoding consists of a single byte with value **0xc0** plus the length of the list followed by the concatenation of the RLP encodings of the items. The range of the first byte is thus `[0xc0, 0xf7]` (dec. `[192, 247]`).
+- If the total payload of a list is more than 55 bytes long, the RLP encoding consists of a single byte with value **0xf7** plus the length in bytes of the length of the payload in binary form, followed by the length of the payload, followed by the concatenation of the RLP encodings of the items. The range of the first byte is thus `[0xf8, 0xff]` (dec. `[248, 255]`).
 
 In code, this is:
 
 ```python
 def rlp_encode(input):
     if isinstance(input,str):
-        if len(input) == 1 and ord(input) < 0x80: return input
-        else: return encode_length(len(input), 0x80) + input
-    elif isinstance(input,list):
+        if len(input) == 1 and ord(input) < 0x80:
+            return input
+        return encode_length(len(input), 0x80) + input
+    elif isinstance(input, list):
         output = ''
-        for item in input: output += rlp_encode(item)
+        for item in input:
+            output += rlp_encode(item)
         return encode_length(len(output), 0xc0) + output
 
-def encode_length(L,offset):
+def encode_length(L, offset):
     if L < 56:
          return chr(L + offset)
     elif L < 256**8:
          BL = to_binary(L)
          return chr(len(BL) + offset + 55) + BL
-    else:
-         raise Exception("input too long")
+     raise Exception("input too long")
 
 def to_binary(x):
     if x == 0:
         return ''
-    else:
-        return to_binary(int(x / 256)) + chr(x % 256)
+    return to_binary(int(x / 256)) + chr(x % 256)
 ```
 
 ## Examples {#examples}
@@ -114,7 +113,7 @@ def rlp_decode(input):
         output = instantiate_str(substr(input, offset, dataLen))
     elif type is list:
         output = instantiate_list(substr(input, offset, dataLen))
-    output + rlp_decode(substr(input, offset + dataLen))
+    output += rlp_decode(substr(input, offset + dataLen))
     return output
 
 def decode_length(input):
@@ -138,8 +137,7 @@ def decode_length(input):
         lenOfListLen = prefix - 0xf7
         listLen = to_integer(substr(input, 1, lenOfListLen))
         return (1 + lenOfListLen, listLen, list)
-    else:
-        raise Exception("input don't conform RLP encoding form")
+    raise Exception("input does not conform to RLP encoding form")
 
 def to_integer(b):
     length = len(b)
@@ -147,15 +145,15 @@ def to_integer(b):
         raise Exception("input is null")
     elif length == 1:
         return ord(b[0])
-    else:
-        return ord(substr(b, -1)) + to_integer(substr(b, 0, -1)) * 256
+    return ord(substr(b, -1)) + to_integer(substr(b, 0, -1)) * 256
 ```
 
 ## Further reading {#further-reading}
 
 - [RLP in Ethereum](https://medium.com/coinmonks/data-structure-in-ethereum-episode-1-recursive-length-prefix-rlp-encoding-decoding-d1016832f919)
 - [Ethereum under the hood: RLP](https://medium.com/coinmonks/ethereum-under-the-hood-part-3-rlp-decoding-df236dc13e58)
+- [Coglio, A. (2020). Ethereum's Recursive Length Prefix in ACL2. arXiv preprint arXiv:2009.13769.](https://arxiv.org/abs/2009.13769)
 
 ## Related topics {#related-topics}
 
-- [Patricia merkle trie](/developers/docs/data-structures-and-encoding/patricia-merkle-tries)
+- [Patricia merkle trie](/developers/docs/data-structures-and-encoding/patricia-merkle-trie)

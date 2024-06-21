@@ -1,7 +1,6 @@
 ---
 title: Ethereum support
 description: Get support in the Ethereum ecosystem.
-sidebar: true
 lang: en
 ---
 
@@ -39,6 +38,7 @@ Looking for an Ethereum wallet? [Explore our full list of Ethereum wallets](/wal
 
 Building can be hard. Here are some development focused spaces with experienced Ethereum developers that are happy to help.
 
+- [Alchemy University](https://university.alchemy.com/#starter_code)
 - [CryptoDevs discord](https://discord.gg/Z9TA39m8Yu)
 - [Ethereum StackExchange](https://ethereum.stackexchange.com/)
 - [StackOverflow](https://stackoverflow.com/questions/tagged/web3)
@@ -58,6 +58,7 @@ Here are some popular examples:
 - [Hardhat](https://discord.gg/xtrMGhmbfZ)
 - [Truffle](https://discord.gg/8uKcsccEYE)
 - [Alchemy](http://alchemy.com/discord)
+- [Tenderly](https://discord.gg/fBvDJYR)
 
 ## Running a node {#node-support}
 
@@ -107,4 +108,8 @@ Transactions on Ethereum can sometimes get stuck if you have submitted a lower t
 
 #### How do I mine Ethereum? {#mining-ethereum}
 
-We do not recommend buying mining equipment if you are not already mining Ethereum. In ~Q3/Q4 2022, [The Merge](/upgrades/merge/) will happen, switching Ethereum from proof-of-work to proof-of-stake. This change means mining Ethereum will no longer be possible. If you are still interested in mining Ethereum, you can seek help from mining communities, such as [/r/EtherMining](https://www.reddit.com/r/EtherMining/).
+Ethereum mining is no longer possible. Mining was switched off when Ethereum moved from proof-of-work to proof-of-stake. Now, instead of miners, Ethereum has validators. Validators stake ETH and receive staking rewards for securing the network.
+
+#### How do I become a staker/validator? {#become-validator}
+
+To become a validator, you must stake 32 ETH in the Ethereum deposit contract and set up a validator node. More information is available on our [staking pages](/staking) and at [the staking launchpad](https://launchpad.ethereum.org/).

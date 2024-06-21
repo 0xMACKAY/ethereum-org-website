@@ -3,7 +3,6 @@ title: "The Graph: Fixing Web3 data querying"
 description: Blockchain is like a database but without SQL. All the data is there, but no way to access it. Let me show you how to fix this with The Graph and GraphQL.
 author: Markus Waas
 lang: en
-sidebar: true
 tags:
   [
     "solidity",
@@ -19,7 +18,7 @@ source: soliditydeveloper.com
 sourceUrl: https://soliditydeveloper.com/thegraph
 ---
 
-This time we will take a closer look at The Graph which essentially became part of the standard stack for developing Dapps in the last year. Let's first see how we would do things the traditional way...
+This time we will take a closer look at The Graph which essentially became part of the standard stack for developing dapps in the last year. Let's first see how we would do things the traditional way...
 
 ## Without The Graph... {#without-the-graph}
 
@@ -49,7 +48,7 @@ contract Game {
 }
 ```
 
-Now let's say in our Dapp, we want to display total bets, the total games lost/won and also update it whenever someone plays again. The approach would be:
+Now let's say in our dapp, we want to display total bets, the total games lost/won and also update it whenever someone plays again. The approach would be:
 
 1. Fetch `totalGamesPlayerWon`.
 2. Fetch `totalGamesPlayerLost`.
@@ -72,7 +71,7 @@ GameContract.events.BetPlaced({
 });
 ```
 
-Now this is still somewhat fine for our simple example. But let's say we want to now display the amounts of bets lost/won only for the current player. Well we're out of luck, you better deploy a new contract that stores those values and fetch them. And now imagine a much more complicated smart contract and Dapp, things can get messy quickly.
+Now this is still somewhat fine for our simple example. But let's say we want to now display the amounts of bets lost/won only for the current player. Well we're out of luck, you better deploy a new contract that stores those values and fetch them. And now imagine a much more complicated smart contract and dapp, things can get messy quickly.
 
 ![One Does Not Simply Query](./one-does-not-simply-query.jpg)
 
@@ -127,7 +126,7 @@ You can define multiple contracts and handlers here. A typical setup would have 
 
 For convenience reasons you also might want to use a template tool like mustache. Then you create a `subgraph.template.yaml` and insert the addresses based on the latest deployments. For a more advanced example setup, see for example the [Aave subgraph repo](https://github.com/aave/aave-protocol/tree/master/thegraph).
 
-And the full documentation can be seen here: https://thegraph.com/docs/define-a-subgraph#the-subgraph-manifest.
+And the full documentation can be seen [here](https://thegraph.com/docs/en/developing/creating-a-subgraph/#the-subgraph-manifest).
 
 ```yaml
 specVersion: 0.0.1
@@ -170,7 +169,7 @@ The schema is the GraphQL data definition. It will allow you to define which ent
 - BigInt
 - BigDecimal
 
-You can also use entities as type to define relationships. In our example we define a 1-to-many relationship from player to bets. The ! means the value can't be empty. The full documentation can be seen here: https://thegraph.com/docs/define-a-subgraph#the-graphql-schema.
+You can also use entities as type to define relationships. In our example we define a 1-to-many relationship from player to bets. The ! means the value can't be empty. The full documentation can be seen [here](https://thegraph.com/docs/define-a-subgraph#the-graphql-schema).
 
 ```graphql
 type Bet @entity {
@@ -243,7 +242,7 @@ export function handleNewBet(event: PlacedBet): void {
 
 ## Using it in the Frontend {#using-it-in-the-frontend}
 
-Using something like Apollo Boost, you can easily integrate The Graph in your React Dapp (or Apollo-Vue). Especially when using React hooks and Apollo, fetching data is as simple as writing a single GraphQl query in your component. A typical setup might look like this:
+Using something like Apollo Boost, you can easily integrate The Graph in your React dapp (or Apollo-Vue). Especially when using React hooks and Apollo, fetching data is as simple as writing a single GraphQl query in your component. A typical setup might look like this:
 
 ```javascript
 // See all subgraphs: https://thegraph.com/explorer/
@@ -296,13 +295,13 @@ But we're missing one last piece of the puzzle and that's the server. You can ei
 
 ### Graph Explorer: The hosted service {#graph-explorer-the-hosted-service}
 
-The easiest way is to use the hosted service. Follow the instructions [here](https://thegraph.com/docs/deploy-a-subgraph) to deploy a subgraph. For many projects you can actually find existing subgraphs in the explorer at https://thegraph.com/explorer/.
+The easiest way is to use the hosted service. Follow the instructions [here](https://thegraph.com/docs/deploy-a-subgraph) to deploy a subgraph. For many projects you can actually find existing subgraphs in the [explorer](https://thegraph.com/explorer/).
 
 ![The Graph-Explorer](./thegraph-explorer.png)
 
 ### Running your own node {#running-your-own-node}
 
-Alternatively you can run your own node: https://github.com/graphprotocol/graph-node#quick-start. One reason to do this might be using a network that's not supported by the hosted service. Currently supported are Mainnet, Kovan, Rinkeby, Ropsten, Goerli, PoA-Core, xDAI and Sokol.
+Alternatively you can run your own node. Docs [here](https://github.com/graphprotocol/graph-node#quick-start). One reason to do this might be using a network that's not supported by the hosted service. Currently supported are Mainnet, Kovan, Rinkeby, Ropsten, Goerli, PoA-Core, xDAI and Sokol.
 
 ## The decentralized future {#the-decentralized-future}
 

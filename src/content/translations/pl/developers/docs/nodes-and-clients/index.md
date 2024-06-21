@@ -2,7 +2,6 @@
 title: Węzły i klienci
 description: Przegląd węzłów Ethereum i oprogramowania klienta, a także jak skonfigurować węzeł i dlaczego powinieneś to zrobić.
 lang: pl
-sidebar: true
 sidebarDepth: 2
 isOutdated: true
 ---
@@ -110,7 +109,7 @@ W tabeli przedstawiono podsumowanie poszczególnych klientów. Wszystkie z nich 
 | [Geth](https://geth.ethereum.org/)                           | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten          | Szybka, pełna                  | Archive, Pruned |
 | [OpenEthereum](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten i więcej          | Warp, pełna                    | Archive, Pruned |
 | [Nethermind](http://nethermind.io/)                          | C#, .NET | Linux, Windows, macOS | Mainnet, Görli, Ropsten, Rinkeby I więcej | Szybka, pełna                  | Archive, Pruned |
-| [Besu](https://pegasys.tech/solutions/hyperledger-besu/)     | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, i Görli        | Szybka, pełna                  | Archive, Pruned |
+| [Besu](https://besu.hyperledger.org/en/stable/)              | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, i Görli        | Szybka, pełna                  | Archive, Pruned |
 | [Trinity](https://trinity.ethereum.org/)                     | Python   | Linux, macOS          | Mainnet, Görli, Ropsten, Rinkeby i więcej | Pełna, wiązka, szybka/nagłówek | Archive         |
 
 Więcej informacji o obsługiwanych sieciach znajdziesz w rozdziale [Sieci Ethereum](/developers/docs/networks/).
@@ -153,7 +152,7 @@ Hyperledger Besu to klient Ethereum klasy korporacyjnej dla sieci publicznych i 
 - Szybka (domyślna) – pobiera wszystkie bloki (w tym nagłówki, transakcje i paragony), weryfikuje wszystkie nagłówki i pobiera stan i weryfikuje go w nagłówkach.
 - Lekki – pobiera wszystkie nagłówki bloków, dane bloków i weryfikuje niektóre losowo.
 - Synchronizacja warp – co 5000 bloków, węzły wykonają migawkę o krytycznym znaczeniu dla konsensusu. Każdy węzeł może pobrać te zrzuty w sieci, umożliwiając szybką synchronizację. [Więcej o warp](https://openethereum.github.io/wiki/Warp-Sync-Snapshot-Format)
-- Synchronizacja beam – tryb synchronizacji, który umożliwia szybsze działanie. Nie wymaga długich oczekiwań na synchronizację, zamiast tego wypełnia dane z upływem czasu. [Więcej o beam ](https://medium.com/@jason.carver/intro-to-beam-sync-a0fd168be14a)
+- Synchronizacja beam – tryb synchronizacji, który umożliwia szybsze działanie. Nie wymaga długich oczekiwań na synchronizację, zamiast tego wypełnia dane z upływem czasu. [Więcej o beam](https://medium.com/@jason.carver/intro-to-beam-sync-a0fd168be14a)
 - Synchronizacja nagłówka – możesz użyć zaufanego punktu kontrolnego, aby rozpocząć synchronizację od nowszego nagłówka, a następnie pozostawić to procesowi w tle, aby ostatecznie wypełnić luki
 
 Typ synchronizacji określasz podczas konfiguracji, na przykład:
@@ -212,9 +211,7 @@ Małe, niedrogie i wydajne urządzenia, takie jak te, są idealne do uruchomieni
 
 ## Klienci Eth2 {#consensus-clients}
 
-Pojawili się nowi klienci obsługujący [aktualizacje Eth2](/upgrades/beacon-chain/). Będą obsługiwać łańcuch śledzący i wspierać nowy mechanizm konsensusu [proof-of-stake](/developers/docs/consensus-mechanisms/pos/).
-
-[Wyświetl klientów Eth2](/upgrades/get-involved/#clients).
+Pojawili się nowi klienci obsługujący [aktualizacje Eth2](/roadmap/beacon-chain/). Będą obsługiwać łańcuch śledzący i wspierać nowy mechanizm konsensusu [proof-of-stake](/developers/docs/consensus-mechanisms/pos/).
 
 ## Dalsza lektura {#further-reading}
 
@@ -222,7 +219,6 @@ W Internecie jest wiele instrukcji i informacji o klientach Ethereum, tutaj jest
 
 - [Ethereum 101 – Część 2 – Zrozumienie węzłów](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _–Wil Barnes, 13 lutego 2019_
 - [Uruchamianie pełnych węzłów Ethereum: kompletny przewodnik](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _7 listopada 2019 r. – Justin Leroux_
-- [Uruchomiono węzeł Ethereum](https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/) _– ETHHub, często aktualizowany_
 - [Analizowanie wymagań sprzętowych dla Ethereum w pełni zweryfikowany węzeł](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902) _– Albert Palau, 24 września 2018 r._
 - [Uruchomienie węzła Besu na Ethereum Mainnet: Korzyści, Wymagania i Ustawienia](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _– Felipe Faraggi, 7 maja 2020_
 

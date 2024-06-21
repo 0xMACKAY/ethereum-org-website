@@ -1,7 +1,6 @@
 ---
 title: 以太坊支持
 description: 在以太坊生态系统中获得支持。
-sidebar: true
 lang: zh
 ---
 
@@ -14,14 +13,14 @@ lang: zh
 了解以太坊的去中心化性质至关重要，因为任何自称是以太坊官方支持人员的人都可能在试图诈骗您！ 预防诈骗的最好办法就是自学并认真对待安全问题。
 
 <DocLink to="/security/">
-  以太坊安全和预防诈骗措施
+  以太坊安全和预防欺诈措施
 </DocLink>
 
 <DocLink to="/learn/">
   学习以太坊基础知识
 </DocLink>
 
-尽管缺少官方支持，但以太坊生态系统中的许多团体、社区和项目都乐于提供帮助。
+尽管缺乏官方支持，但以太坊生态系统中的许多团体、社区和项目都乐于提供帮助，并且您可以在此页面上找到很多有用的信息和资源。 还有问题吗？ 加入 [ethereum.org Discord](/discord/)，我们会尽力提供帮助。
 
 ## 钱包支持 {#wallet-support}
 
@@ -39,10 +38,11 @@ _这并不是完整的列表。 需要帮助寻找特定钱包的支持？ 加�
 
 构建这类应用可能很困难。 以下提供了一些专注于开发的平台，其中有经验丰富的以太坊开发人员，他们会乐意提供帮助。
 
+- [Alchemy University](https://university.alchemy.com/#starter_code)
 - [CryptoDevs discord](https://discord.gg/Z9TA39m8Yu)
-- [以太坊 StackExchange](https://ethereum.stackexchange.com/)
+- [以太坊堆栈交易所](https://ethereum.stackexchange.com/)
 - [StackOverflow](https://stackoverflow.com/questions/tagged/web3)
-- [Web3 大学](https://www.web3.university/)
+- [Web3 University](https://www.web3.university/)
 
 您还可以在我们的[以太坊开发者资源](/developers/)部分找到文档和开发指南。
 
@@ -58,6 +58,7 @@ _这并不是完整的列表。 需要帮助寻找特定钱包的支持？ 加�
 - [安全帽](https://discord.gg/xtrMGhmbfZ)
 - [Truffle](https://discord.gg/8uKcsccEYE)
 - [Alchemy](http://alchemy.com/discord)
+- [Tenderly](https://discord.gg/fBvDJYR)
 
 ## 运行节点 {#node-support}
 
@@ -107,4 +108,8 @@ _这并不是完整的列表。 需要帮助寻找特定钱包的支持？ 加�
 
 #### 我如何开采以太坊？ {#mining-ethereum}
 
-如果您尚未开采以太坊，我们不建议购买挖矿设备。 2022 年第 2 季度，将发生[合并](/upgrades/merge/)，将以太坊从工作量证明转换为权益证明。 这就意味着以太坊将不再可能被开采。 如果您仍然对开采以太坊感兴趣，可以从采矿社区寻求帮助，例如 [/r/EtherMining](https://www.reddit.com/r/EtherMining/)。
+以太坊不再支持挖矿。 在以太坊从工作量证明过渡到权益证明后，挖矿就终止了。 现在，以太坊使用验证者而不是矿工。 验证者质押以太币并通过保护以太坊安全获得质押奖励。
+
+#### 我如何成为质押人/验证者？ {#become-validator}
+
+要成为验证者，你必须在以太坊存款合约中质押 32 个以太币并搭建一个验证节点。 更多信息见[质押界面](/staking)和[质押启动版](https://launchpad.ethereum.org/)。

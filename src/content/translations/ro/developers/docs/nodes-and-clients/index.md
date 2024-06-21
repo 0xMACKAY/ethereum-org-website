@@ -2,7 +2,6 @@
 title: Noduri și clienți
 description: O prezentare generală a nodurilor Ethereum și a software-ului client plus cum să configurați un nod și de ce ar trebui să faceți acest lucru.
 lang: ro
-sidebar: true
 sidebarDepth: 2
 ---
 
@@ -20,7 +19,7 @@ If you're new to the topic of nodes, we recommend first checking out our user-fr
 
 Puteți vizualiza în timp real rețeaua Ethereum uitându-vă pe această [hartă a nodurilor](https://etherscan.io/nodetracker).
 
-Există numeroși [clienți Ethereum](/developers/docs/nodes-and-clients/#execution-clients), într-o varietate de limbaje de programare, cum ar fi Go, Rust, JavaScript, Typescript, Python, C# .NET, Nim și Java. Punctul comun al acestor implementări este că toate respectă o specificație formală (inițial denumită [Cartea galbenă Ethereum ](https://ethereum.github.io/yellowpaper/paper.pdf)). This specification dictates how the Ethereum network and blockchain functions.
+Există numeroși [clienți Ethereum](/developers/docs/nodes-and-clients/#execution-clients), într-o varietate de limbaje de programare, cum ar fi Go, Rust, JavaScript, Typescript, Python, C# .NET, Nim și Java. Punctul comun al acestor implementări este că toate respectă o specificație formală (inițial denumită [Cartea galbenă Ethereum](https://ethereum.github.io/yellowpaper/paper.pdf)). This specification dictates how the Ethereum network and blockchain functions.
 
 ![Execution client](./client-diagram.png) Diagramă simplificată a funcţionalităţilor clientului Ethereum.
 
@@ -118,7 +117,7 @@ Acest tabel prezintă o sinteză a diferiților clienți. Toţi aceştia trec ni
 | ------------------------------------------------------------------------- | -------- | --------------------- | ------------------------------------------ | ------------------------- | ---------------- |
 | [Geth](https://geth.ethereum.org/)                                        | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Snap, Full                | Arhivă, Curățată |
 | [Nethermind](http://nethermind.io/)                                       | C#, .NET | Linux, Windows, macOS | Mainnet, Görli, Ropsten, Rinkeby și altele | Fast, Beam, Archive       | Arhivă, Curățată |
-| [Besu](https://pegasys.tech/solutions/hyperledger-besu/)                  | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli, and more | Rapidă, Completă          | Arhivă, Curățată |
+| [Besu](https://besu.hyperledger.org/en/stable/)                           | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli, and more | Rapidă, Completă          | Arhivă, Curățată |
 | [Erigon](https://github.com/ledgerwatch/erigon)                           | Începe   | Linux, Windows, macOS | Rețea principală, Görli, Rinkeby, Ropsten  | Full                      | Arhivă, Curățată |
 | [OpenEthereum (Deprecated)](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten și altele          | Warp, Completă            | Arhivă, Curățată |
 
@@ -162,7 +161,7 @@ Hyperledger Besu este un client Ethereum de nivel de întreprindere pentru rețe
 
 #### Erigon {#erigon}
 
-Erigon, cunoscut anterior sub denumirea de Turbo-Geth, este un fork Go Ethereum ce vizează creşterea vitezei şi a eficienţei spaţiului pe disc. Erigon este o implementare complet reproiectată a lui Ethereum, actualmente scrisă în Go, dar care urmează să fie implementată și în alte limbaje. Scopul Erigon este de a oferi o implementare mai rapidă, mai modulară și mai optimizată a lui Ethereum. It can perform a full archive node sync using less than 2TB of disk space, in under 3 days
+Erigon, cunoscut anterior sub denumirea de Erigon, este un fork Go Ethereum ce vizează creşterea vitezei şi a eficienţei spaţiului pe disc. Erigon este o implementare complet reproiectată a lui Ethereum, actualmente scrisă în Go, dar care urmează să fie implementată și în alte limbaje. Scopul Erigon este de a oferi o implementare mai rapidă, mai modulară și mai optimizată a lui Ethereum. It can perform a full archive node sync using less than 2TB of disk space, in under 3 days
 
 ### Moduri de sincronizare {#sync-modes}
 
@@ -174,7 +173,7 @@ Synchronization modes represent different approaches to this process with variou
 
 Prezentare generală a metodelor de sincronizare utilizate în cazul clienților pregătiți pentru Mainnet:
 
-##### Sincronizare completă {#full-sync}
+##### Sincronizare completă
 
 Sincronizarea completă descarcă toate blocurile (inclusiv anteturile, tranzacțiile și chitanțele) și generează incremental starea blockchain-ului, executând fiecare bloc de la geneză.
 
@@ -244,17 +243,15 @@ Ca orice altă configurație, aceasta poate fi definită cu ajutorul steguleţul
 
 ## Clienți de consens (anterior clienți „Eth2”) {#consensus-clients}
 
-There are multiple consensus clients (previously known as 'Eth2' clients) to support the [consensus upgrades](/upgrades/beacon-chain/). They are running the Beacon Chain and will provide proof-of-stake consensus mechanism to execution clients after [The Merge](/upgrades/merge/).
-
-[View consensus clients](/upgrades/get-involved/#clients).
+There are multiple consensus clients (previously known as 'Eth2' clients) to support the [consensus upgrades](/roadmap/beacon-chain/). They are running the Beacon Chain and will provide proof-of-stake consensus mechanism to execution clients after [The Merge](/roadmap/merge/).
 
 | Client                                                      | Limbaj     | Sisteme de operare    | Rețele                                 |
 | ----------------------------------------------------------- | ---------- | --------------------- | -------------------------------------- |
-| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | Lanţul Beacon, Prater                  |
-| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | Lanţul Beacon, Prater                  |
-| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | Lanţul Beacon, Prater, Pyrmont         |
-| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | Lanţul Beacon, Prater                  |
-| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Go         | Linux, Windows, macOS | Lanţul Beacon, Gnosis, Prater, Pyrmont |
+| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | Lanţul Beacon, Goerli                  |
+| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | Lanţul Beacon, Goerli                  |
+| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | Lanţul Beacon, Goerli, Pyrmont         |
+| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | Lanţul Beacon, Goerli                  |
+| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Go         | Linux, Windows, macOS | Lanţul Beacon, Gnosis, Goerli, Pyrmont |
 
 ## Hardware {#hardware}
 
@@ -309,7 +306,6 @@ There is a lot of information about Ethereum clients on the internet. Here are f
 
 - [Ethereum 101 - Partea 2 - Înțelegerea nodurilor](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _– Wil Barnes, 13 februarie 2019_
 - [Rularea de noduri Ethereum complete: Un ghid pentru cei nu prea motivați](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _– Justin Leroux, 7 noiembrie 2019_
-- [Executarea unui nod Ethereum](https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/) _– ETHHub, actualizat frecvent_
 - [Analiza cerințelor de hardware pentru a fi un nod Ethereum validat complet](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902) _– Albert Palau, 24 septembrie 2018_
 - [Rularea unui nod Hyperledger Besu pe Mainnet-ul Ethereum: avantaje, cerințe și configurare](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _– Felipe Faraggi, 7 mai 2020_
 

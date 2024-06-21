@@ -2,7 +2,6 @@
 title: Düğümler ve istemciler
 description: Ethereum düğümlerine ve istemci yazılımına genel bakış, ayrıca bir düğümün nasıl kurulacağı ve bunu neden yapmanız gerektiğine dair bilgi.
 lang: tr
-sidebar: true
 sidebarDepth: 2
 ---
 
@@ -33,7 +32,7 @@ Go, Rust, JavaScript, Typescript, Python, C# .NET, Nim ve Java gibi çeşitli pr
 - Tam blok zinciri verilerini depolar.
 - Blok doğrulamaya katılır, tüm blokları ve durumları doğrular.
 - Tüm durumlar tam bir düğümden türetilebilir.
-- Ağa hizmet eder ve istek üzerine veri sağlar.
+- Ağa hizmet eder ve talep üzerine veri sağlar.
 
 ### Hafif düğüm {#light-node}
 
@@ -118,7 +117,7 @@ Bu tablo, farklı istemcileri özetlemektedir. Hepsi [istemci testlerini](https:
 | ------------------------------------------------------------------------------------- | -------- | --------------------- | ------------------------------------------ | --------------------------- | --------------- |
 | [Geth](https://geth.ethereum.org/)                                                    | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Snap, Full                  | Archive, Pruned |
 | [Nethermind](http://nethermind.io/)                                                   | C#, .NET | Linux, Windows, macOS | Mainnet, Görli, Ropsten, Rinkeby ve dahası | Fast, Beam, Archive         | Archive, Pruned |
-| [Besu](https://pegasys.tech/solutions/hyperledger-besu/)                              | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli ve dahası | Fast, Full                  | Archive, Pruned |
+| [Besu](https://besu.hyperledger.org/en/stable/)                                       | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli ve dahası | Fast, Full                  | Archive, Pruned |
 | [Erigon](https://github.com/ledgerwatch/erigon)                                       | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Full                        | Archive, Pruned |
 | [OpenEthereum (Kullanımdan kaldırıldı)](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten ve dahası          | Warp, Full                  | Archive, Pruned |
 
@@ -152,7 +151,7 @@ Nethermind, ARM dahil tüm büyük platformlarda çalışan C# .NET teknoloji y�
 
 - optimize edilmiş bir sanal makine
 - durum erişimi
-- prometheus/Grafana gösterge panoları, sıralı kurumsal kayıt desteği, JSON RPC izleme ve analiz eklentileri gibi ağ iletişimi ve zengin özellikler.
+- prometheus/Grafana gösterge panelleri, sıralı kurumsal kayıt desteği, JSON RPC izleme ve analiz eklentileri gibi ağ iletişimi ve zengin özellikler.
 
 Nethermind ayrıca premium kullanıcılar için [ayrıntılı belgeler](https://docs.nethermind.io), güçlü geliştirici desteği, çevrimiçi bir topluluk ve 7/24 desteğe sahiptir.
 
@@ -162,7 +161,7 @@ Hyperledger Besu, genel ve izin verilen ağlar için kurumsal düzeyde bir Ether
 
 #### Erigon {#erigon}
 
-Eskiden Turbo-Geth olarak bilinen Erigon, hız ve disk alanı verimliliğine yönelik bir Go Ethereum çatalıdır. Erigon, şu anda Go'da yazılmış, ancak diğer dillerde uygulanması planlanan Ethereum'un tamamen yeniden tasarlanmış bir uygulamasıdır. Erigon'un amacı, Ethereum'un daha hızlı, daha modüler ve daha optimize edilmiş bir uygulamasını sağlamaktır. 3 günden kısa bir sürede 2 Tb'den daha az disk alanı kullanarak tam bir arşiv düğümü senkronizasyonu gerçekleştirebilir
+Eskiden Erigon olarak bilinen Erigon, hız ve disk alanı verimliliğine yönelik bir Go Ethereum çatalıdır. Erigon, şu anda Go'da yazılmış, ancak diğer dillerde uygulanması planlanan Ethereum'un tamamen yeniden tasarlanmış bir uygulamasıdır. Erigon'un amacı, Ethereum'un daha hızlı, daha modüler ve daha optimize edilmiş bir uygulamasını sağlamaktır. 3 günden kısa bir sürede 2 Tb'den daha az disk alanı kullanarak tam bir arşiv düğümü senkronizasyonu gerçekleştirebilir
 
 ### Senkronizasyon modları {#sync-modes}
 
@@ -174,7 +173,7 @@ Senkronizasyon modları, çeşitli değiş tokuşlarla bu sürece farklı yakla�
 
 Mainnet'e hazır istemcilerde kullanılan senkronizasyon yaklaşımlarına genel bakış:
 
-##### Full senkronizasyon {#full-sync}
+##### Full senkronizasyon
 
 Full senkronizasyon, tüm blokları (başlıklar, işlemler ve makbuzlar dahil) indirir ve her bloğu başlangıçtan yürüterek aşamalı olarak blok zincirinin durumunu oluşturur.
 
@@ -244,17 +243,15 @@ Diğer tüm yapılandırmalar gibi, başlangıç bayrağıyla veya yapılandırm
 
 ## Mutabakat istemcileri (eski adıyla "Eth2" istemcileri) {#consensus-clients}
 
-[Mutabakat yükseltmelerini](/upgrades/beacon-chain/) desteklemek için birden fazla mutabakat istemcisi (eskiden "Eth2" istemcisi olarak biliniyordu) vardır. İşaret Zincirini çalıştırırlar ve [Birleştirmeden](/upgrades/merge/) sonra yürütüm istemcilerine hisse ispatı mutabakat mekanizması sağlayacaklar.
-
-[Mutabakat istemcilerini görüntüle](/upgrades/get-involved/#clients).
+[Mutabakat yükseltmelerini](/roadmap/beacon-chain/) desteklemek için birden fazla mutabakat istemcisi (eskiden "Eth2" istemcisi olarak biliniyordu) vardır. İşaret Zincirini çalıştırırlar ve [Birleştirmeden](/roadmap/merge/) sonra yürütüm istemcilerine hisse ispatı mutabakat mekanizması sağlayacaklar.
 
 | İstemci                                                     | Dil        | İşletim sistemleri    | Ağlar                                   |
 | ----------------------------------------------------------- | ---------- | --------------------- | --------------------------------------- |
-| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | İşaret Zinciri, Prater                  |
-| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | İşaret Zinciri, Prater                  |
-| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | İşaret Zinciri, Prater, Pyrmont         |
-| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | İşaret Zinciri, Prater                  |
-| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Go         | Linux, Windows, macOS | İşaret Zinciri, Gnosis, Prater, Pyrmont |
+| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | İşaret Zinciri, Goerli                  |
+| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | İşaret Zinciri, Goerli                  |
+| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | İşaret Zinciri, Goerli, Pyrmont         |
+| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | İşaret Zinciri, Goerli                  |
+| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Go         | Linux, Windows, macOS | İşaret Zinciri, Gnosis, Goerli, Pyrmont |
 
 ## Donanım {#hardware}
 
@@ -309,7 +306,6 @@ Bunun gibi küçük, uygun fiyatlı ve verimli cihazlar, evde bir düğüm çal�
 
 - [Ethereum 101 - 2. Bölüm - Düğümleri Anlamak](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _– Wil Barnes, 13 Şubat 2019_
 - [Ethereum Tam Düğümlerini Çalıştırmak: Pek Motivasyonu Olmayanlar İçin Bir Kılavuz](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _– Justin Leroux, 7 Kasım 2019_
-- [Bir Ethereum Düğümü Çalıştırma](https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/) _– ETHHub, sık sık güncellenir_
 - [Tam doğrulanmış bir Ethereum düğümü olmak için gereken donanımın analizi](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902) _– Albert Palau, 24 Eylül 2018_
 - [Ethereum Mainnet'te Hyperledger Besu Düğümü Çalıştırma: Faydaları, Gereksinimleri ve Kurulum](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _– Felipe Faraggi, 7 Mayıs 2020_
 

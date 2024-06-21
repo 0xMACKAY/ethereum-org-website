@@ -3,7 +3,6 @@ title: "Configurarea integrării continue cu Solidity și Truffle"
 description: Cum să configurați „Travis” sau „Circle CI” pentru testarea „Truffle” și plugin-uri utile
 author: Markus Waas
 lang: ro
-sidebar: true
 tags:
   - "solidity"
   - "contracte inteligente"
@@ -11,7 +10,7 @@ tags:
   - "truffle"
   - "integrare continuă"
   - "ganache"
-skill: intermediar
+skill: intermediate
 published: 2020-06-05
 source: soliditydeveloper.com
 sourceUrl: https://soliditydeveloper.com/continuous-integration
@@ -158,9 +157,9 @@ Cu plugin-ul „solidity-coverage” puteți să verificați la câte dintre că
 ### Etapa 1: Creați un proiect „metacoin” și instalați instrumentele „coverage” {#step-1-create-a-metacoin-project-and-install-coverage-tools}
 
 ```bash
-$ npm install --save-dev truffle
-$ npm install --save-dev coveralls
-$ npm install --save-dev solidity-coverage
+npm install --save-dev truffle
+npm install --save-dev coveralls
+npm install --save-dev solidity-coverage
 ```
 
 ### Etapa 2: Adăugați „solidity-coverage” la matricea plugin-urilor din truffle-config.js {#step-2-add-solidity-coverage-to-the-plugins-array-in-truffle-configjs}

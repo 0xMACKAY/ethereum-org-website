@@ -8,9 +8,8 @@ tags:
   - "solidity"
   - "memulai"
   - "erc-20"
-skill: tingkat menengah
+skill: intermediate
 lang: id
-sidebar: true
 published: 2020-04-07
 source: EthereumDev
 sourceUrl: https://ethereumdev.io/transfers-and-approval-or-erc20-tokens-from-a-solidity-smart-contract/

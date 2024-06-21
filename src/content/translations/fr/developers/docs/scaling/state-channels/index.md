@@ -2,7 +2,6 @@
 title: Canaux d'état
 description: Une introduction aux canaux d'état et canaux de paiement en tant que solution de mise à l'échelle actuellement utilisée par la communauté Ethereum.
 lang: fr
-sidebar: true
 incomplete: true
 sidebarDepth: 3
 ---
@@ -11,7 +10,7 @@ Les canaux d'état permettent aux participants d'effectuer des `x` transactions 
 
 ## Prérequis {#prerequisites}
 
-Vous devez avoir une bonne compréhension de tous les sujets fondamentaux et une compréhension de haut niveau de la [mise à l'échelle Ethereum](/developers/docs/scaling/). La mise en œuvre de solutions de mise à l'échelle telles que les canaux est un sujet avancé puisque la technologie est moins éprouvée et est en cours de recherche et de développement.
+Vous devez avoir une bonne compréhension de tous les sujets fondamentaux et une compréhension approfondie de la [mise à l'échelle d'Ethereum](/developers/docs/scaling/). La mise en œuvre de solutions de mise à l'échelle telles que les canaux est un sujet avancé puisque la technologie est moins éprouvée et est en cours de recherche et de développement.
 
 ## Canaux {#channels}
 
@@ -64,13 +63,10 @@ Plusieurs projets fournissent des implémentations de canaux d'état que vous po
 
 **Canaux d'état**
 
-- [EthHub sur les canaux d'état](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/state-channels/)
 - [Making Sense of Ethereum’s Layer 2 Scaling Solutions: State Channels, Plasma, and Truebit](https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4) _- Josh Stark, 12 février 2018_
 - [State Channels - an explanation](https://www.jeffcoleman.ca/state-channels/) _- Jeff Coleman, 6 novembre 2015 _
 - [Basics of State Channels](https://education.district0x.io/general-topics/understanding-ethereum/basics-state-channels/) _District0x_
 
 **Canaux de paiement**
-
-- [EthHub sur les canaux de paiement](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/payment-channels/)
 
 _Une ressource communautaire vous a aidé ? Modifiez cette page et ajoutez-la !_

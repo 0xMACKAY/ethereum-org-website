@@ -3,7 +3,6 @@ title: "Configurazione dell'integrazione continua di Solidity e Truffle"
 description: Come configurare Travis o Circle CI per il test con Truffle insieme ai plugin utili
 author: Markus Waas
 lang: it
-sidebar: true
 tags:
   - "Solidity"
   - "smart contract"
@@ -11,7 +10,7 @@ tags:
   - "truffle"
   - "integrazione continua"
   - "ganache"
-skill: intermedio
+skill: intermediate
 published: 2020-06-05
 source: soliditydeveloper.com
 sourceUrl: https://soliditydeveloper.com/continuous-integration
@@ -101,13 +100,13 @@ workflows:
 
 ## Aggiungere il plugin eth-gas-reporter {#adding-the-eth-gas-reporter-plugin}
 
-Il plugin eth-gas-reporter è piuttosto utile per tenere traccia dei costi del carburante delle funzioni del tuo smart contract. Averlo nella tua CI sarà inoltre utile per mostrare le differenze quando si aggiungono le richieste di pull.
+Il plugin eth-gas-reporter è piuttosto utile per tenere traccia dei costi del gas delle funzioni del tuo contratto intelligente. Averlo nella tua CI sarà inoltre utile per mostrare le differenze quando si aggiungono le richieste di pull.
 
 ### Fase 1: Installa il plugin eth-gas-reporter e i codecheck {#step-1-install-the-eth-gas-reporter-plugin-and-codechecks}
 
 ```bash
-$ npm install --save-dev eth-gas-reporter
-$ npm install --save-dev @codechecks/client
+npm install --save-dev eth-gas-reporter
+npm install --save-dev @codechecks/client
 ```
 
 ### Fase 2: Aggiungi il plugin alle impostazioni di mocha nel tuo truffle-config.js {#step-2-add-the-plugin-to-the-mocha-settings-inside-your-truffle-configjs}
@@ -140,16 +139,16 @@ checks:
 - npx codechecks
 ```
 
-### Fase 5: Crea un conto Codechecks {#step-5-create-a-codechecks-account}
+### Fase 5: Crea un conto di Codechecks {#step-5-create-a-codechecks-account}
 
 - Crea un conto con [Codechecks](http://codechecks.io/).
 - Aggiungi la repo di GitHub.
 - Copia il segreto e aggiungi `CC_SECRET=COPIED SECRET` alla tua CI (vedi qui per [Travis](https://docs.travis-ci.com/user/environment-variables/), qui per [CircleCI](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project)).
 - Ora prosegui e crea una richiesta di pull.
 
-È tutto. Ora troverai un bel rapporto sulle modifiche ai costi del carburante della tua richiesta di pull.
+È tutto. Ora troverai un bel rapporto sulle modifiche ai costi del gas della tua richiesta di pull.
 
-![Esempio di rapporti del carburante](./gas-reports.png)
+![Esempio di rapporti del gas](./gas-reports.png)
 
 ## Aggiungere il plugin di solidity-coverage {#adding-the-solidity-coverage-plugin}
 
@@ -158,9 +157,9 @@ Con il plugin di solidity-coverage puoi controllare in quale misura i percorsi d
 ### Fase 1: Crea un progetto di metacoin e installa gli strumenti di coverage {#step-1-create-a-metacoin-project-and-install-coverage-tools}
 
 ```bash
-$ npm install --save-dev truffle
-$ npm install --save-dev coveralls
-$ npm install --save-dev solidity-coverage
+npm install --save-dev truffle
+npm install --save-dev coveralls
+npm install --save-dev solidity-coverage
 ```
 
 ### Fase 2: Aggiungi solidity-coverage all'insieme di plugin in truffle-config.js {#step-2-add-solidity-coverage-to-the-plugins-array-in-truffle-configjs}
@@ -183,8 +182,8 @@ Solidity coverage avvia la propria ganache-cli, quindi non dobbiamo preoccuparce
 
 ### Fase 4: Aggiungi la repository a coveralls {#step-4-add-repository-to-coveralls}
 
-- Crea un conto [Coveralls](https://coveralls.io/).
-- Aggiungi a esso la repo di GitHub.
+- Crea un conto con [Coveralls](https://coveralls.io/).
+- Aggiungi la repo di GitHub.
 - Ora prosegui e crea una richiesta di pull.
 
 ![Esempio di coverall](./coverall.png)
@@ -192,7 +191,7 @@ Solidity coverage avvia la propria ganache-cli, quindi non dobbiamo preoccuparce
 ## Ulteriori idee {#further-ideas}
 
 - [MythX](https://mythx.io/): Con MythX puoi analizzare automaticamente la sicurezza del tuo smart contract. Ha quindi molto senso [aggiungerlo alla tua CI](https://blog.mythx.io/howto/mythx-and-continuous-integration-part-1-circleci/).
-- [Linting](https://en.wikipedia.org/wiki/Lint_%28software%29): Un buon codice è applicabile in una certa misura con gli strumenti di linting. [Eslint](https://eslint.org/) è ottimo per JavaScript e [facile da configurare](https://eslint.org/docs/user-guide/getting-started), mentre [Solhint](https://protofire.github.io/solhint/) è utilizzabile per Solidity.
+- [Linting](https://wikipedia.org/wiki/Lint_%28software%29): Un buon codice è applicabile in una certa misura con gli strumenti di linting. [Eslint](https://eslint.org/) è ottimo per JavaScript e [facile da configurare](https://eslint.org/docs/user-guide/getting-started), mentre per Solidity si può usare [Solhint](https://protofire.github.io/solhint/).
 - Test lunghi: A volte potresti voler aggiungere dei test estremi, ad es. testando un contratto con centinaia di utenti. Ciò richiede molto tempo. Invece di eseguirli a ogni esecuzione del test, aggiungili alla CI.
 
 Ecco tutto. L'integrazione continua è una strategia molto utile per i tuoi sviluppi. Puoi dare un'occhiata all'esempio completo su [Truffle-CI-Example](https://github.com/gorgos/Truffle-CI-Example). Basta assicurarti di rimuovere Circle-CI o Travis, ne basta uno!

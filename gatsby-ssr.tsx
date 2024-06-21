@@ -6,15 +6,33 @@
 
 import React from "react"
 
-import type { GatsbySSR } from "gatsby"
+import type { RenderBodyArgs } from "gatsby"
 
-import Layout from "./src/components/Layout"
-
-// Prevents <Layout/> from unmounting on page transitions
-// https://www.gatsbyjs.com/docs/layout-components/#how-to-prevent-layout-components-from-unmounting
-export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({
-  element,
-  props,
-}) => {
-  return <Layout {...props}>{element}</Layout>
+export const onRenderBody = ({ setHeadComponents }: RenderBodyArgs) => {
+  setHeadComponents([
+    <link
+      rel="preload"
+      href="/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Inter-Regular.woff"
+      as="font"
+      type="font/woff"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/IBMPlexMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+  ])
 }

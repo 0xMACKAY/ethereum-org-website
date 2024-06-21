@@ -1,23 +1,21 @@
 ---
-title: Informazioni sugli Smart Contract con token ERC-20
-description: Introduzione alla distribuzione del primo Smart Contract su una rete di prova Ethereum
+title: Comprendere il contratto intelligente del token ERC-20
+description: Un'introduzione alla distribuzione del tuo primo contratto intelligente su una rete di prova di Ethereum
 author: "jdourlens"
 tags:
-  - "Smart Contract"
+  - "contratti intelligenti"
   - "token"
   - "Solidity"
-  - "primi passi"
-  - "ERC-20"
-skill: principiante
+  - "erc-20"
+skill: beginner
 lang: it
-sidebar: true
 published: 2020-04-05
 source: EthereumDev
 sourceUrl: https://ethereumdev.io/understand-the-erc20-token-smart-contract/
 address: "0x19dE91Af973F404EDF5B4c093983a7c6E3EC8ccE"
 ---
 
-Uno dei più importanti [standard di Smart Contract](/developers/docs/standards/) su Ethereum è conosciuto come [ERC-20](/developers/docs/standards/tokens/erc-20/) ed si è imposto come standard tecnico utilizzato per tutti gli Smart Contract sulla blockchain Ethereum per l'implementazione di token fungibili.
+Uno dei più importanti [standard dei contratti intelligenti](/developers/docs/standards/) su Ethereum è noto come [ERC-20](/developers/docs/standards/tokens/erc-20/); è emerso come lo standard tecnico usato per tutti i contratti intelligenti sulla blockchain di Ethereum per le implementazioni di token fungibili.
 
 ERC-20 definisce una serie comune di regole che tutti i token fruibili di Ethereum devono seguire. Di conseguenza, consente a sviluppatori di ogni tipologia di prevedere con precisione come funzioneranno i nuovi token nell'ecosistema Ethereum. Questo semplifica lo sviluppo, in quanto si può lavorare con la sicurezza che ogni nuovo progetto non dovrà essere rifatto in seguito al rilascio di un nuovo token, se questo segue le regole.
 
@@ -92,7 +90,7 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 
 Questo evento viene emesso quando la quantità di token (value) è inviata dall'indirizzo `from` all'indirizzo `to`.
 
-In caso di conio di nuovi token, il trasferimento avviene solitamente `from` (da) l'indirizzo 0x00..0000, mentre nel caso di burning dei token il trasferimento avviene `to` (verso) 0x00..0000.
+Nel caso del conio di nuovi token, il trasferimento è solitamente `from` l'indirizzo 0x00..0000, mentre nel caso in cui i token sono bruciati, il trasferimento è `to` 0x00..0000.
 
 ```solidity
 event Approval(address indexed owner, address indexed spender, uint256 value);
@@ -105,7 +103,7 @@ Questo evento vien trasmesso ogni volta che la quantità di token (`value`) è a
 Ecco il codice più semplice su cui basare un token ERC-20:
 
 ```solidity
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
 interface IERC20 {
 
@@ -130,21 +128,14 @@ contract ERC20Basic is IERC20 {
     uint8 public constant decimals = 18;
 
 
-    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
-    event Transfer(address indexed from, address indexed to, uint tokens);
-
-
     mapping(address => uint256) balances;
 
     mapping(address => mapping (address => uint256)) allowed;
 
-    uint256 totalSupply_;
-
-    using SafeMath for uint256;
+    uint256 totalSupply_ = 10 ether;
 
 
-   constructor(uint256 total) public {
-    totalSupply_ = total;
+   constructor() {
     balances[msg.sender] = totalSupply_;
     }
 
@@ -158,8 +149,8 @@ contract ERC20Basic is IERC20 {
 
     function transfer(address receiver, uint256 numTokens) public override returns (bool) {
         require(numTokens <= balances[msg.sender]);
-        balances[msg.sender] = balances[msg.sender].sub(numTokens);
-        balances[receiver] = balances[receiver].add(numTokens);
+        balances[msg.sender] = balances[msg.sender]-numTokens;
+        balances[receiver] = balances[receiver]+numTokens;
         emit Transfer(msg.sender, receiver, numTokens);
         return true;
     }
@@ -178,28 +169,13 @@ contract ERC20Basic is IERC20 {
         require(numTokens <= balances[owner]);
         require(numTokens <= allowed[owner][msg.sender]);
 
-        balances[owner] = balances[owner].sub(numTokens);
-        allowed[owner][msg.sender] = allowed[owner][msg.sender].sub(numTokens);
-        balances[buyer] = balances[buyer].add(numTokens);
+        balances[owner] = balances[owner]-numTokens;
+        allowed[owner][msg.sender] = allowed[owner][msg.sender]-numTokens;
+        balances[buyer] = balances[buyer]+numTokens;
         emit Transfer(owner, buyer, numTokens);
         return true;
     }
 }
-
-library SafeMath {
-    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-      assert(b <= a);
-      return a - b;
-    }
-
-    function add(uint256 a, uint256 b) internal pure returns (uint256) {
-      uint256 c = a + b;
-      assert(c >= a);
-      return c;
-    }
-}
 ```
-
-Quest'implementazione usa la libreria SafeMath. Consulta il nostro tutorial al riguardo, se vuoi sapere [come questa libreria torna utile per gestire gli overflow e underflow negli Smart Contract](https://ethereumdev.io/using-safe-math-library-to-prevent-from-overflows/).
 
 Un'altra eccellente implementazione dello standard token ERC-20 è l'[implementazione ERC-20 OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20).

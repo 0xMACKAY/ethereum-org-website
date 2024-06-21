@@ -2,7 +2,6 @@
 title: Introduction à la pile Ethereum
 description: Présentation étape par étape des différentes couches de la pile Ethereum, et comment elles fonctionnent ensemble.
 lang: fr
-sidebar: true
 ---
 
 Comme toute pile logicielle, la pile complète Ethereum varie d'un projet à l'autre en fonction de vos objectifs propres.
@@ -11,11 +10,11 @@ Il existe cependant des technologies Ethereum de base qui contribuent à fournir
 
 ## Niveau 1: Machine virtuelle Ethereum {#ethereum-virtual-machine}
 
-La [machine virtuelle Ethereum (EVM)](/developers/docs/evm/) est l'environnement d'exécution des contrats intelligents Ethereum. Tout contrat intelligent et changement d'état sur la blockchain Ethereum sont exécutés par des [transactions](/developers/docs/transactions/). L'EVM gère l'ensemble du traitement des transactions sur le réseau Ethereum.
+La [machine virtuelle Ethereum (EVM)](/developers/docs/evm/) est l'environnement d'exécution des contrats intelligents sur Ethereum. Tout contrat intelligent et changement d'état sur la blockchain Ethereum sont exécutés par des [transactions](/developers/docs/transactions/). L'EVM gère l'ensemble du traitement des transactions sur le réseau Ethereum.
 
 Comme toute machine virtuelle, l'EVM crée un niveau d'abstraction entre l'exécution du code et la machine qui l'exécute (un nœud Ethereum). Actuellement, l'EVM s'exécute sur des milliers de nœuds répartis à travers le monde.
 
-De façon non visible, l'EVM utilise un ensemble d'instructions de codes d'opérations (opcodes) pour exécuter des tâches spécifiques. Ces 140 opcodes uniques permettent à l'EVM d'être Turing-complet, ce qui signifie qu'elle est capable de calculer à peu près tout, à partir du moment où elle dispose des ressources suffisantes.
+De façon non visible, l'EVM utilise un ensemble d'instructions de codes d'opérations (opcodes) pour exécuter des tâches spécifiques. Ces 140 op codes (uniques) permettent à l'EVM d'être [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness), ce qui signifie que l'EVM est capable de calculer à peu près n'importe quoi, compte tenu de ressources suffisantes.
 
 En tant que développeur de DApp, vous n'avez pas besoin d'en savoir beaucoup plus sur l'EVM, à part qu'elle existe et qu'elle assure de façon fiable le bon fonctionnement des applications sur Ethereum sans temps d'arrêt.
 

@@ -4,7 +4,6 @@ description: An overview of how to get started with pooled ETH staking
 lang: en
 template: staking
 emoji: ":money_with_wings:"
-sidebar: true
 image: ../../../assets/staking/leslie-pool.png
 alt: Leslie the rhino swimming in the pool.
 sidebarDepth: 2
@@ -25,15 +24,9 @@ Some pools operate using smart contracts, where funds can be deposited to a cont
 In addition to the benefits we outlined in our [intro to staking](/staking/), staking with a pool comes with a number of distinct benefits.
 
 <CardGrid>
-  <Card title="Low barrier to entry" emoji="🐟">
-    Not a whale? No problem. Most staking pools let you stake virtually any amount of ETH by joining forces with other stakers, unlike staking solo which requires 32 ETH.
-  </Card>
-  <Card title="Stake today" emoji=":stopwatch:">
-    Staking with a pool is as easy as a token swap. No need to worry about hardware setup and node maintenance. Pools allow you to deposit your ETH which enables node operators to run validators. Rewards are then distributed to contributors minus a fee for node operations.
-  </Card>
-  <Card title="Liquidity tokens" emoji=":droplet:">
-    Many staking pools provide a token that represents a claim on your staked ETH and the rewards it generates. This allows you to make use of your staked ETH, e.g. as collateral in DeFi applications.
-  </Card>
+  <Card title="Low barrier to entry" emoji="🐟" description="Not a whale? No problem. Most staking pools let you stake virtually any amount of ETH by joining forces with other stakers, unlike staking solo which requires 32 ETH." />
+  <Card title="Stake today" emoji=":stopwatch:" description="Staking with a pool is as easy as a token swap. No need to worry about hardware setup and node maintenance. Pools allow you to deposit your ETH which enables node operators to run validators. Rewards are then distributed to contributors minus a fee for node operations." />
+  <Card title="Liquidity tokens" emoji=":droplet:" description="Many staking pools provide a token that represents a claim on your staked ETH and the rewards it generates. This allows you to make use of your staked ETH, e.g. as collateral in DeFi applications." />
 </CardGrid>
 
 <StakingComparison page="pools" />
@@ -42,7 +35,11 @@ In addition to the benefits we outlined in our [intro to staking](/staking/), st
 
 Pooled or delegated staking is not natively supported by the Ethereum protocol, but given the demand for users to stake less than 32 ETH a growing number of solutions have been built out to serve this demand.
 
-Each pool and the tools or smart contracts they use have been built out by different teams and each come with their own risks and benefits.
+Each pool and the tools or smart contracts they use have been built out by different teams, and each comes with benefits and risks. Pools enable users to swap their ETH for a token representing staked ETH. The token is known as a "liquid staking derivative"; this is useful because it allows users to swap any amount of ETH to an equivalent amount of a yield-bearing token that generates a return from the staking rewards applied to the underlying staked ETH (and vice versa) on decentralized exchanges even though the actual ETH stays staked on the consensus layer. This means swaps back and forth from a yield-bearing staked-ETH product and "raw ETH" is quick, easy and not only available in multiples of 32 ETH.
+
+However, these liquid staking derivatives tend to create cartel-like behaviors where a large amount of staked ETH ends up under the control of a few centralized organizations rather than spread across many independent individuals. This creates conditions for censorship or value extraction. The gold standard for staking should always be individuals running validators on their own hardware whenever possible.
+
+[More on risks of staking tokens](https://notes.ethereum.org/@djrtwo/risks-of-lsd).
 
 Attribute indicators are used below to signal notable strengths or weaknesses a listed staking pool may have. Use this section as a reference for how we define these attributes while you're choosing a pool to join.
 
@@ -52,24 +49,26 @@ Attribute indicators are used below to signal notable strengths or weaknesses a 
 
 There are a variety of options available to help you with your setup. Use the above indicators to help guide you through the tools below.
 
-<InfoBanner emoji="⚠️" isWarning>
-Please note the importance of choosing a service that takes <a href="/developers/docs/nodes-and-clients/client-diversity/">client diversity</a> seriously, as it improves the security of the network, and limits your risk. Services that have evidence of limiting majority client use are marked as <em style="text-transform: uppercase;">"diverse clients."</em>
-</InfoBanner>
+<ProductDisclaimer />
 
 <StakingProductsCardGrid category="pools" />
 
-Have a suggestion for a staking tool we missed? Check out our [product listing policy](/contributing/adding-staking-product/) to see if it would be a good fit, and to submit it for review.
+Please note the importance of choosing a service that takes [client diversity](/developers/docs/nodes-and-clients/client-diversity/) seriously, as it improves the security of the network, and limits your risk. Services that have evidence of limiting majority client use are indicated with <em style="text-transform: uppercase;">"execution client diversity"</em> and <em style="text-transform: uppercase;">"consensus client diversity."</em>
 
-## FAQ {#faq}
+Have a suggestion for a staking tool we missed? Check out our [product listing policy](/contributing/adding-staking-products/) to see if it would be a good fit, and to submit it for review.
+
+## Frequently asked questions {#faq}
 
 <ExpandableCard title="How do I earn rewards?">
-Typically ERC-20 liquidity tokens are issued to stakers that represents the value of their staked ETH plus rewards. Keep in mine that different pools will distribute staking rewards to their users via slightly different methods, but this is the common theme.
+Typically ERC-20 liquidity tokens are issued to stakers that represents the value of their staked ETH plus rewards. Keep in mind that different pools will distribute staking rewards to their users via slightly different methods, but this is the common theme.
 </ExpandableCard>
 
 <ExpandableCard title="When can I withdraw my stake?">
-Currently, withdrawing funds from a validator on the Beacon Chain is not possible, which currently limits the ability to actually <em>redeem</em> your liquidity token for the ETH rewards locked in the consensus layer.
+Right now! The Shanghai/Capella network upgrade occurred in April 2023, and introduced staking withdrawals. Validator accounts that back staking pools now have the ability to exit and withdraw ETH to their designated withdrawal address. This enables the ability to redeem your portion of stake for the underlying ETH. Check with your provider to see how they support this functionality.
 
-Alternatively, pools that utilize an ERC-20 liquidity token allow users to trade this token in the open market, effectively allowing you to "withdraw" without actually removing ETH from the Beacon Chain.
+Alternatively, pools that utilize an ERC-20 liquidity token allow users to trade this token in the open market, allowing you to sell your staking position, effectively "withdrawing" without actually removing ETH from the staking contract.
+
+<ButtonLink to="/staking/withdrawals/">More on staking withdrawals</ButtonLink>
 </ExpandableCard>
 
 <ExpandableCard title="Is this different from staking with my exchange?">
@@ -77,7 +76,7 @@ There are many similarities between these pooled staking options and centralized
 
 Unlike centralized exchanges, many other pooled staking options utilize smart contracts and/or liquidity tokens, which are usually ERC-20 tokens that can be held in your own wallet, and bought or sold just like any other token. This offers a layer of sovereignty and security by giving you control over your tokens, but still does not give you direct control over the validator client attesting on your behalf in the background.
 
-Some pooling options are more decentralized than others when it comes to the nodes that back them. To promote the health and decentralization of the network, stakers are always encourage to select a pooling service that enables a permissionless decentralized set of node operators.
+Some pooling options are more decentralized than others when it comes to the nodes that back them. To promote the health and decentralization of the network, stakers are always encouraged to select a pooling service that enables a permissionless decentralized set of node operators.
 </ExpandableCard>
 
 ## Further reading {#further-reading}

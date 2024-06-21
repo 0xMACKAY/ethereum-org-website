@@ -1,7 +1,6 @@
 ---
 title: Языковые ресурсы
 description: Не англоязычные ресурсы для изучения Ethereum
-sidebar: true
 lang: ru
 ---
 
@@ -17,7 +16,7 @@ lang: ru
 
 ## Ресурсы Ethereum.org {#ethereum-org}
 
-Ethereum.org переведен на более чем 40 языков, которые вы можете найти на нашей [странице языков](/languages).
+Проект Ethereum.org переведен носителями на более чем 40 языков, список которых вы найдете на нашей [странице языков](/languages).
 
 Если вы говорите на двух языках и хотите помочь нам привлечь больше людей, вы также можете принять участие в [программе перевода ethereum.org](/contributing/translation-program/#translation-program) и помочь нам с переводом сайта.
 
@@ -46,7 +45,7 @@ Ethereum.org переведен на более чем 40 языков, кото
 **Основные ресурсы**
 
 - [Ethereum.cn](https://www.ethereum.cn/) — контент, поддерживаемый сообществом, охватывающий обновление уровня консенсуса, все заметки с собраний основных разработчиков, уровень 2 и т. д.
-- [EthFans](https://github.com/editor-Ajian/EthFans.org-annual-collected-works/) — изучите все, от основ до продвинутых тем Ethereum
+- [EthFans](https://github.com/editor-Ajian/EthFans.org-annual-collected-works/) — изучите все, от основ до вопросов продвинутого использования Ethereum
 - [Unitimes](https://mp.weixin.qq.com/s/tvloZSDBSOQN9zDQj_91kA) — контент, поддерживаемый сообществом, охватывающий знания, связанные с Ethereum, децентрализованными финансами (DeFi), невзаимозаменяемыми токенами (NFT) и Web3
 - [123ETH](https://123eth.org/) — портал в экосистему Ethereum
 - [Zhen Xiao](http://zhenxiao.com/blockchain/) — бесплатные онлайн-курсы по криптовалюте и ее применению
@@ -60,7 +59,7 @@ Ethereum.org переведен на более чем 40 языков, кото
 
 **Для разработчиков**
 
-- [DappLearning](https://github.com/Dapp-Learning-DAO/Dapp-Learning) — учебная группа для изучения основных проектов децентрализованных приложений (dApp) и еженедельного обмена мыслями и комментариями
+- [DappLearning](https://github.com/Dapp-Learning-DAO/Dapp-Learning) — учебная группа для изучения основных проектов децентрализованных приложений и еженедельного обмена мыслями и комментариями
 - [LearnBlockchain](https://learnblockchain.cn/) — сообщество разработчиков, где можно обмениваться информацией о технологии блокчейн
 
 **Для исследователей криптографии**
@@ -68,36 +67,44 @@ Ethereum.org переведен на более чем 40 языков, кото
 - [SecbitLabs](https://mp.weixin.qq.com/s/69_tqBJpr_sbaKtR1sBRMw) — учетная запись в WeChat, где объясняются вопросы криптографии, безопасности и т. д.
 - [Sparkbyte](https://mp.weixin.qq.com/s/9KgKTc_jtJ7bWKdbNPoqvQ) — учетная запись в WeChat, рассказывающая о технологии zk
 
+### Чешский {#cs}
+
+- [Gwei.cz](https://gwei.cz) — локальное сообщество на тему Web3, создает образовательный контент, организует очные и онлайн-мероприятия
+- [Gwei.cz Příručka](https://prirucka.gwei.cz/) — руководство по Ethereum для начинающих
+- [DAO Příručka](https://dao.gwei.cz/) — руководство для начинающих по DAO
+- [Mastering Ethereum](https://ipfs.infura-ipfs.io/ipfs/bafybeidvuxhnsgfx3tncpfxheqglkjwmdxclknlgd7s7qggd2a6bzgb27m) — о тонкостях работы Ethereum на чешском языке
+
 ### Французский {#fr}
 
 - [Ethereum France](https://www.ethereum-france.com/) — Ethereum France организует мероприятия, создает контент и способствует обсуждениям по вопросам Ethereum
 - [Ethereum.fr](https://ethereum.fr/) — новости и образование в сфере Ethereum
 - [BanklessFR](https://banklessfr.substack.com/) — новостная рассылка Bankless на французском языке
-- [CryptoFR](https://cryptofr.com/category/44/ethereum-general) — форум криптовалют, в том числе с обсуждением Ethereum
+- [CryptoFR](https://cryptofr.com/category/44/ethereum-general) — форум о криптовалютах, в том числе с обсуждением Ethereum
 
 ### Немецкий {#de}
 
 - [Microsoft Learn (Solidity)](https://docs.microsoft.com/de-de/learn/modules/blockchain-learning-solidity/) — использование Solidity
-- [Microsoft Learn (смарт-контракты)](https://docs.microsoft.com/de-de/learn/modules/blockchain-solidity-ethereum-smart-contracts/) — написание смарт-контрактов Ethereum с Solidity
+- [Microsoft Learn (умные контракты)](https://docs.microsoft.com/de-de/learn/modules/blockchain-solidity-ethereum-smart-contracts/) — написание умных контрактов Ethereum с помощью Solidity
 - [Microsoft Learn (сети Ethereum)](https://docs.microsoft.com/de-de/learn/modules/blockchain-ethereum-networks/) — подключение и развертывание сетей Ethereum
 - [Microsoft Learn (блокчейны)](https://docs.microsoft.com/de-de/learn/paths/ethereum-blockchain-development/) — введение в блокчейн-разработку
 
 ### Итальянский {#it}
 
-- [Ethereum Italia](https://www.ethereum-italia.it/) — обучение, мероприятия и новости Ethereum, посвященные смарт-контрактам и технологии блокчейн
+- [Ethereum Italia](https://www.ethereum-italia.it/) — обучение, мероприятия и новости Ethereum, посвященные умным контрактам и блокчейн-технологиям
 - [Подкаст Ethereum Italia](https://www.ethereum-italia.it/podcast/) — подкаст Ethereum на итальянском языке
 - [Microsoft Learn (Solidity)](https://docs.microsoft.com/it-it/learn/modules/blockchain-learning-solidity/) — научитесь использовать Solidity
-- [Microsoft Learn (смарт-контракты)](https://docs.microsoft.com/it-it/learn/modules/blockchain-solidity-ethereum-smart-contracts/) — узнайте, как писать смарт-контракты с использованием Solidity
-- [Microsoft Learn (dApps)](https://docs.microsoft.com/it-it/learn/modules/blockchain-create-ui-decentralized-apps/) — создание пользовательского интерфейса с децентрализованными приложениями
+- [Microsoft Learn (смарт-контракты)](https://docs.microsoft.com/it-it/learn/modules/blockchain-solidity-ethereum-smart-contracts/) — узнайте, как писать умные контракты с использованием Solidity
+- [Microsoft Learn (децентрализованные приложения)](https://docs.microsoft.com/it-it/learn/modules/blockchain-create-ui-decentralized-apps/) — создание пользовательского интерфейса с децентрализованными приложениями
 
 ### Испанский {#es}
 
 - [Ethereum Madrid](https://ethereummadrid.com/) — курсы, мероприятия и блог по блокчейну, децентрализованным финансам (DeFi) и управлению
 - [Cointelegraph](https://es.cointelegraph.com/ethereum-for-beginners) — руководство по Ethereum для начинающих на испанском языке
 - [Tutoriales online](https://tutoriales.online/curso/solidity) — изучите Solidity и программирование на Ethereum
-- [Curso Introducción a Ethereum Development](https://youtube.com/playlist?list=PLTqiwJDd_R8y9pfUBjhkVa1IDMwyQz-fU) — основы Solidity, тестирование и развертывание вашего первого смарт-контракта
-- [Curso Introducción a Seguridad y Hacking en Ethereum](https://youtube.com/playlist?list=PLTqiwJDd_R8yHOvteko_DmUxUTMHnlfci) — понимание распространенных уязвимостей и проблем безопасности в реальных смарт-контрактах
-- [Curso Introducción a DeFi Development](https://youtube.com/playlist?list=PLTqiwJDd_R8zZiP9_jNdaPqA3HqoW2lrS) — узнайте, как смарт-контракты по децентрализованным финансам (DeFi) работают в Solidity, и создайте собственного автоматизированного маркет-мейкера
+- [Curso Introducción a Ethereum Development](https://youtube.com/playlist?list=PLTqiwJDd_R8y9pfUBjhkVa1IDMwyQz-fU) — основы Solidity, тестирование и развертывание вашего первого умного контракта
+- [Curso Introducción a Seguridad y Hacking en Ethereum](https://youtube.com/playlist?list=PLTqiwJDd_R8yHOvteko_DmUxUTMHnlfci) — понимание распространенных уязвимостей и проблем безопасности в реальных умных контрактах
+- [Curso Introducción a DeFi Development](https://youtube.com/playlist?list=PLTqiwJDd_R8zZiP9_jNdaPqA3HqoW2lrS) — узнайте, как умные контракты с децентрализованными финансами (DeFi) работают в Solidity, и создайте собственного автоматизированного маркет-мейкера
+- [Cryptoversidad](https://www.youtube.com/c/Cryptoversidad) — нетехнические учебные материалы по блокчейну, от начинающих до продвинутых. Узнайте все о криптовалютах и Ethereum.
 
 ### Турецкий {#tr}
 
@@ -106,14 +113,14 @@ Ethereum.org переведен на более чем 40 языков, кото
 
 ### Вьетнамский {#vi}
 
-- [Tino Group](https://wiki.tino.org/ethereum-la-gi/) — обзор Ethereum, децентрализованных приложений (dApp) и кошельков, а также часто задаваемые вопросы
+- [Tino Group](https://wiki.tino.org/ethereum-la-gi/) — обзор Ethereum, децентрализованных приложений, кошельков, а также часто задаваемых вопросов
 - [Tap Chi Bitcoin](https://tapchibitcoin.io/tap-chi/tin-tuc-ethereum-eth) — веб-платформа, на которой есть образовательные и новостные подстраницы по Ethereum
 - [Coin68](https://coin68.com/ethereum-tieu-diem/) — криптовалютный портал с новостями и образовательным контентом по Ethereum
 
 ### Японский {#ja}
 
-- [Japan Virtual and Crypto assets Exchange Association](https://jvcea.or.jp/)
-- [Japan Cryptoasset Business Association](https://cryptocurrency-association.org/)
-- [Get started with blockchain development - Learn | Microsoft Docs](https://docs.microsoft.com/ja-jp/learn/paths/ethereum-blockchain-development/) - This learning path introduces you to blockchain and development on the Ethereum platform
-- [Mastering Ethereum](https://www.oreilly.co.jp/books/9784873118963/) - Mastering Ethereum in Japanese
-- [Hands-On Smart Contract Development with Solidity and Ethereum](https://www.oreilly.co.jp/books/9784873119342/) - Hands-On Smart Contract Development with Solidity and Ethereum in Japanese
+- [Японская ассоциация обмена виртуальными и криптовалютными активами](https://jvcea.or.jp/)
+- [Японская бизнес-ассоциация криптовалютных активов](https://cryptocurrency-association.org/)
+- [Начало блокчейн-разработки — обучение | Microsoft Docs](https://docs.microsoft.com/ja-jp/learn/paths/ethereum-blockchain-development/) — данный учебный материал знакомит вас с блокчейном и разработкой на платформе Ethereum
+- [Mastering Ethereum](https://www.oreilly.co.jp/books/9784873118963/) — Mastering Ethereum на японском языке
+- [Hands-On Smart Contract Development with Solidity and Ethereum](https://www.oreilly.co.jp/books/9784873119342/) — практическая разработка умных контрактов с Solidity и Ethereum на японском языке

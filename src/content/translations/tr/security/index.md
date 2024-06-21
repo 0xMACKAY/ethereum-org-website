@@ -2,7 +2,6 @@
 title: Ethereum güvenliği ve dolandırıcılık önleme
 description: Ethereum'da güvende kalmak
 lang: tr
-sidebar: true
 ---
 
 # Ethereum güvenliği ve dolandırıcılık önleme {#introduction}
@@ -159,8 +158,6 @@ Akıllı sözleşmelerle etkileşim kurarken sınırsız harcama limitlerine izi
 
 Birçok Ethereum cüzdanı, boşaltılan hesaplara karşı koruma sağlamak için limit koruması sunar.
 
-[Limit korumalı cüzdanları keşfedin](/wallets/find-wallet/?filters=has_limits_protection)
-
 <Divider />
 
 ## Yaygın dolandırıcılıklar {#common-scams}
@@ -168,18 +165,18 @@ Birçok Ethereum cüzdanı, boşaltılan hesaplara karşı koruma sağlamak içi
 Dolandırıcılar her zaman paranızı almanın yollarını ararlar. Dolandırıcıları tamamen durdurmak imkansızdır, ancak kullanılan çoğu tekniğin farkında olarak onları daha etkisiz hâle getirebiliriz. Bu dolandırıcılıkların birçok çeşidi vardır, ancak genellikle aynı üst düzey kalıpları izlerler. Ne olursa olsun, unutmayın:
 
 - her zaman şüpheci olun
-- kimse size ücretsiz veya indirimli ETH vermeyecek!
+- kimse size ücretsiz veya indirimli ETH vermeyecek
 - kimsenin özel anahtarlarınıza veya kişisel bilgilerinize erişmesine gerek yok
 
 ### Çekiliş dolandırıcılığı {#giveaway}
 
 Kripto para birimindeki en yaygın dolandırıcılıklardan biri, çekiliş dolandırıcılığıdır. Çekiliş dolandırıcılığı birçok şekilde olabilir, ancak genelde verilen cüzdan adresine ETH gönderirseniz, ETH'nizin iki katını geri alacağınız vaat edilir. *Bu sebepten dolayı, 1 alana 1 bedava dolandırıcılığı olarak da bilinir.*
 
-Bu dolandırıcılıklar genellikle, yanlış kararlar vermeyi teşvik etmek ve sahte bir aciliyet hissi yaratmak için hediyeyi talep etmek için sınırlı bir fırsat süresi şart koşar.
+Bu dolandırıcılıklar genellikle yanlış kararlar vermeye yönlendirmek ve sahte bir aciliyet hissi yaratmak amacıyla hediyeyi talep etmek için sınırlı bir fırsat süresi şart koşar.
 
 #### Sosyal medya hack'leri {#social-media-hacks}
 
-Bunun üst düzey bir versiyonu Temmuz 2020'de önde gelen ünlülerin ve organizasyonların Twitter hesapları çalındığında gerçekleşti. Hacker eş zamanlı olarak çalınan hesaplarda bir Bitcoin çekilişi paylaştı. Aldatıcı tweetler hızlıca fark edilmiş ve silinmiş olsa da, saldırganlar 11 Bitcoin koparmayı başardı (Eylül 2021 itibarıyla 500.000 ABD Doları)
+Bunun üst düzey bir versiyonu Temmuz 2020'de önde gelen ünlülerin ve organizasyonların Twitter hesapları çalındığında gerçekleşti. Hacker eş zamanlı olarak çalınan hesaplarda bir Bitcoin çekilişi paylaştı. Aldatıcı tweetler hızlıca fark edilmiş ve silinmiş olsa da saldırganlar 11 Bitcoin koparmayı başardı (Eylül 2021 itibarıyla 500.000 ABD Doları).
 
 ![Twitter'da bir dolandırıcılık](./appleTwitterScam.png)
 
@@ -253,7 +250,7 @@ Hatırlanacak birkaç şey:
 
 ### "Eth2" token dolandırıcılığı {#eth2-token-scam}
 
-2022'de gelen [Birleştirme](/upgrades/merge/) ile dolandırıcılar, kullanıcıların ETH'lerini bir "ETH2" token'ı için kullanmalarını sağlamak için "Eth2" terimi hakkındaki karışıklıktan faydalandı. Birleştirme ile kullanıma giren hiçbir "ETH2" veya başka bir yeni token yok. Bugün sahip olduğunuz ETH, Birleştirme sonrasında da aynı ETH olmaya devam edecek ve Birleştirme için ETH'nizde herhangi bir takas yapmanıza gerek yok.
+2022'de gelen [Birleştirme](/roadmap/merge/) ile dolandırıcılar, kullanıcıların ETH'lerini bir "ETH2" token'ı için kullanmalarını sağlamak için "Eth2" terimi hakkındaki karışıklıktan faydalandı. Birleştirme ile kullanıma giren hiçbir "ETH2" veya başka bir yeni token yok. Bugün sahip olduğunuz ETH, Birleştirme sonrasında da aynı ETH olmaya devam edecek ve Birleştirme için ETH'nizde herhangi bir takas yapmanıza gerek yok.
 
 Dolandırıcılar, "destek ekibindenmiş" gibi görünebilir ve size ETH'nizi yatırırsanız karşılığında "ETH2" alacağınızı söylerler. [Ne resmi bir Ethereum destek ekibi](/community/support/) ne de yeni bir token yok. Cüzdan güvenlik kelimelerini asla kimseyle paylaşmayın.
 

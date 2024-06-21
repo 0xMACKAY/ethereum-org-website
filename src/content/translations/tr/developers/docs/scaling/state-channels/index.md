@@ -2,16 +2,15 @@
 title: Durum Kanalları
 description: Şu anda Ethereum topluluğu tarafından kullanılan bir ölçeklendirme çözümü olarak durum kanallarına ve ödeme kanallarına giriş.
 lang: tr
-sidebar: true
 incomplete: true
 sidebarDepth: 3
 ---
 
 Durum kanalları, katılımcıların Ethereum ağına yalnızca iki zincir üstü işlem gönderirken zincir dışı `x` sayıda işlem yapmasına izin verir. Bu, son derece yüksek işlem hacmine izin verir.
 
-## Ön Koşullar {#prerequisites}
+## Ön koşullar {#prerequisites}
 
-Tüm temel konuları iyi anlamalı ve [Ethereum ölçeklendirme](/developers/docs/scaling/) konusunda üst düzey bir anlayışa sahip olmalısınız. Kanallar gibi ölçeklendirme çözümlerini uygulamak, teknoloji henüz pek kullanılmadığı için ve araştırılmaya ve geliştirilmeye devam edildiğinden ileri seviye bilgi gerektirir.
+Temeli oluşturan tüm konuları iyi anlamalı ve [Ethereum ölçeklendirilmesi](/developers/docs/scaling/) konusunda ileri düzeyde bilgiye sahip olmalısınız. Kanallar gibi ölçeklendirme çözümlerini uygulamak, teknoloji henüz pek kullanılmadığı için ve araştırılmaya ve geliştirilmeye devam edildiğinden ileri seviye bilgi gerektirir.
 
 ## Kanallar {#channels}
 
@@ -60,17 +59,14 @@ Birden çok proje, dapp'lerinize entegre edebileceğiniz durum kanallarının uy
 - [Raiden](https://raiden.network/)
 - [Statechannels.org](https://statechannels.org/)
 
-## Daha fazla bilgi {#further-reading}
+## Daha fazla okuma {#further-reading}
 
 **Durum kanalları**
 
-- [EthHub'un durum kanalları hakkındaki içerikleri](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/state-channels/)
 - [Ethereum'un Katman 2 Ölçeklendirme Çözümlerini Anlama: Durum Kanalları, Plazma ve Truebit](https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4) _– Josh Stark, 12 Şubat 2018_
 - [Durum Kanalları - bir açıklama](https://www.jeffcoleman.ca/state-channels/) _6 Kasım 2015 - Jeff Coleman_
 - [Durum Kanallarının Temelleri](https://education.district0x.io/general-topics/understanding-ethereum/basics-state-channels/) _District0x_
 
 **Ödeme kanalları**
-
-- [EthHub'un ödeme kanalları hakkındaki içerikleri](https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/payment-channels/)
 
 _Size yardımcı olan bir topluluk kaynağı mı biliyorsunuz? Bu sayfayı düzenleyin ve onu ekleyin!_

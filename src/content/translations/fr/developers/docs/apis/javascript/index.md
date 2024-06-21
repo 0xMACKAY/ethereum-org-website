@@ -1,15 +1,16 @@
 ---
 title: Bibliothèques d'API JavaScript
-description: Introduction aux Api clientes Ethereum, qui vous permettent d'interagir avec la blockchain depuis votre application.
+description: Introduction aux bibliothèques clientes JavaScript, qui vous permettent d'interagir avec la blockchain depuis votre application.
 lang: fr
-sidebar: true
 ---
 
 Pour qu'une application Web puisse interagir avec la blockchain Ethereum (c'est-à-dire lire les données de la blockchain et/ou envoyer des transactions sur le réseau), elle doit se connecter à un nœud Ethereum.
 
-Dans cet objectif, chaque client Ethereum implémente la spécification [JSON-RPC](/developers/docs/apis/json-rpc/) pour former un ensemble uniforme de [points de terminaison](/developers/docs/apis/json-rpc/endpoints/) sur lesquels les applications peuvent s'appuyer.
+Dans cet objectif, chaque client Ethereum implémente la spécification [JSON-RPC](/developers/docs/apis/json-rpc/) pour former un ensemble uniforme de [méthodes](/developers/docs/apis/json-rpc/#json-rpc-methods) sur lesquelles les applications peuvent s'appuyer.
 
 Si vous voulez utiliser JavaScript pour vous connecter à un nœud Ethereum, il est possible d'avoir recours à Vanilla JavaScript, mais plusieurs bibliothèques de commodité existent à l'intérieur même de l'écosystème, ce qui rend les choses beaucoup plus simples. Avec ces bibliothèques, les développeurs peuvent rédiger des méthodes intuitives d'une seule ligne pour initialiser les demandes JSON RPC (pas directement visibles) qui interagissent avec Ethereum.
+
+Veuillez noter que depuis [La Fusion](/roadmap/merge/), deux parties de logiciels Ethereum connectés - un client d'exécution et un client de consensus - sont nécessaires pour exécuter un nœud. Veuillez vous assurer que votre nœud inclut à la fois un client d'exécution et un client de consensus. Si votre nœud n'est pas sur votre machine en local (par ex. votre nœud est exécuté sur une instance AWS), mettez à jour les adresses IP dans le tutoriel en conséquence. Pour plus d'informations, veuillez consulter notre page sur [l'exécution d'un noeud](/developers/docs/nodes-and-clients/run-a-node/).
 
 ## Prérequis {#prerequisites}
 
@@ -17,7 +18,7 @@ Il peut être utile de comprendre non seulement en quoi consiste JavaScript, mai
 
 ## Pourquoi utiliser une bibliothèque ? {#why-use-a-library}
 
-Les bibliothèques suppriment une grande partie de la complexité de l'interaction directe avec un nœud Ethereum. Elles fournissent également des fonctions utilitaires (par ex. convertir des ETH en gwei) afin que vous puissiez, en tant que développeur, passer moins de temps à gérer les subtilités des clients Ethereum et plus de temps à vous consacrer aux fonctionnalités uniques de votre application.
+Ces bibliothèques suppriment une grande partie de la complexité d'une interaction directe avec un nœud Ethereum. Elles fournissent également des fonctions utilitaires (par ex. convertir des ETH en gwei) afin que vous puissiez, en tant que développeur, passer moins de temps à gérer les subtilités des clients Ethereum et plus de temps à vous consacrer aux fonctionnalités uniques de votre application.
 
 ## Fonctionnalités d'une bibliothèque {#library-features}
 
@@ -64,7 +65,7 @@ var web3 = new Web3(
 Une fois la configuration effectuée, vous pourrez interroger la blockchain pour :
 
 - les numéros de blocs ;
-- le carburant estimé ;
+- le gaz estimé ;
 - les événements du contract intelligent ;
 - l'ID du réseau ;
 - et plus encore...
@@ -73,7 +74,7 @@ Une fois la configuration effectuée, vous pourrez interroger la blockchain pour
 
 Les bibliothèques vous permettent de créer des portefeuilles, gérer vos clés et signer des transactions.
 
-Voici un exemple provenant de la bibliothèque Ethers :
+Voici un exemple provenant de la bibliothèque Ethers
 
 ```js
 // Créer une instance de portefeuille à partir d'un mnémonique...
@@ -152,7 +153,7 @@ Une fois la configuration effectuée, vous pourrez :
 
 ### Interagir avec les fonctions d'un contrat intelligent {#interact-with-smart-contract-functions}
 
-Les bibliothèques clientes JavaScript autorisent votre application à appeler des fonctions de contrat intelligent en lisant l'interface binaire-programme (ABI) d'un contrat compilé.
+Les bibliothèques clientes JavaScript autorisent votre application à appeler des fonctions de contrat intelligent en lisant l'interface binaire d'application (ABI) d'un contrat compilé.
 
 L'ABI explique principalement les fonctions du contrat au format JSON et vous permet de l'utiliser comme un objet JavaScript standard.
 
@@ -208,7 +209,7 @@ Donnerait le JSON suivant :
 Cela veut dire que vous pouvez :
 
 - envoyer une transaction vers le contrat intelligent et exécuter sa méthode ;
-- faire un appel afin d'estimer le carburant nécessaire pour exécuter une méthode quand exécutée par le EVM ;
+- faire un appel afin d'estimer le gaz nécessaire pour exécuter une méthode quand exécutée par le EVM ;
 - déployer un contrat ;
 - et plus encore...
 
@@ -218,7 +219,7 @@ Les fonctions utilitaires vous offrent des raccourcis pour améliorer le dévelo
 
 Les valeurs ETH sont en wei par défaut. 1 ETH = 1 000 000 000 000 000 000 WEI – ça en fait, des chiffres à gérer ! `web3.utils.toWei` convertit l'ether en wei pour vous.
 
-Et dans l'Ethers cela ressemble à ce qui suit :
+Et en ethers, cela ressemble à ce qui suit :
 
 ```js
 // Obtenir le solde d'un compte (par l'adresse ou le nom ENS)
@@ -265,13 +266,18 @@ ethers.utils.formatEther(balance)
 
 **Alchemyweb3 -** **_Enveloppe autour de Web3.js avec nouvelles tentatives automatiques et API améliorées._**
 
-- [Documentation](https://docs.alchemyapi.io/documentation/alchemy-web3)
+- [Documentation](https://docs.alchemy.com/reference/api-overview)
 - [GitHub](https://github.com/alchemyplatform/alchemy-web3)
 
-**Alchemy NFT API -** **_API pour récupérer les données NFT, y compris la propriété, les attributs de métadonnées et plus encore._**
+**Alchemy NFT API -** **_API pour récupérer les données NFT, y compris la détention, les attributs de métadonnées et plus encore._**
 
 - [Documentation](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api)
 - [GitHub](https://github.com/alchemyplatform/alchemy-web3)
+
+**viem -** **_Interface TypeScript pour Ethereum._**
+
+- [Documentation](https://viem.sh)
+- [Github](https://github.com/wagmi-dev/viem)
 
 ## Complément d'information {#further-reading}
 
@@ -280,7 +286,7 @@ _Une ressource communautaire vous a aidé ? Modifiez cette page et ajoutez-la !_
 ## Sujets connexes {#related-topics}
 
 - [Nœuds et clients](/developers/docs/nodes-and-clients/)
-- [Infrastructures de développement](/developers/docs/frameworks/)
+- [Frameworks de développement](/developers/docs/frameworks/)
 
 ## Tutoriels connexes {#related-tutorials}
 

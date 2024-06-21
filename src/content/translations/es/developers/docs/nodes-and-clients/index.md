@@ -2,7 +2,6 @@
 title: Nodos y clientes
 description: Una visión general de los nodos de Ethereum y del software del cliente, además de cómo configurar un nodo y por qué deberías hacerlo.
 lang: es
-sidebar: true
 sidebarDepth: 2
 ---
 
@@ -20,7 +19,7 @@ Si eres nuevo en el tema de los nodos, te recomendamos primero revisar nuestra a
 
 Puedes observar la red de Ethereum en tiempo real accediendo este [mapa de nodos](https://etherscan.io/nodetracker).
 
-Existen varios [clientes de Ethereum ](/developers/docs/nodes-and-clients/#execution-clients), en una variedad de lenguajes de programación como Go, Rust, JavaScript, Typescript, Python, C# .NET, Nim y Java. Lo que estas implementaciones tienen en común es que todas siguen una especificación formal (originalmente, el [libro amarillo de Ethereum](https://ethereum.github.io/yellowpaper/paper.pdf)). Esta especificación determina cómo funcionan la red de Ethereum y las funciones de la blockchain.
+Existen varios [clientes de Ethereum](/developers/docs/nodes-and-clients/#execution-clients), en una variedad de lenguajes de programación como Go, Rust, JavaScript, Typescript, Python, C# .NET, Nim y Java. Lo que estas implementaciones tienen en común es que todas siguen una especificación formal (originalmente, el [libro amarillo de Ethereum](https://ethereum.github.io/yellowpaper/paper.pdf)). Esta especificación determina cómo funcionan la red de Ethereum y las funciones de la blockchain.
 
 ![Cliente de ejecución](./client-diagram.png) Diagrama simplificado de las características del cliente de Ethereum.
 
@@ -116,10 +115,10 @@ En esta tabla se resumen los diferentes clientes. Todos ellos pasan [pruebas de 
 
 | Cliente                                                                   | Idioma   | Sistemas operativos   | Redes                                      | Estrategias de sincronización | Lima de estado     |
 | ------------------------------------------------------------------------- | -------- | --------------------- | ------------------------------------------ | ----------------------------- | ------------------ |
-| [Geth](https://geth.ethereum.org/)                                        | Ir       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Snap, Full                    | Archivo, podado    |
+| [Geth](https://geth.ethereum.org/)                                        | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Snap, Full                    | Archivo, podado    |
 | [Nethermind](http://nethermind.io/)                                       | C#, .NET | Linux, Windows, macOS | Mainnet, Görli, Ropsten, Rinkeby, etc.     | Fast, Beam, Archive           | Archivo, podado    |
-| [Besu](https://pegasys.tech/solutions/hyperledger-besu/)                  | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli, and more | Rápido, completo              | Archivo, podado    |
-| [Erigon](https://github.com/ledgerwatch/erigon)                           | Ir       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Full                          | Archivo, podado    |
+| [Besu](https://besu.hyperledger.org/en/stable/)                           | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, Görli, and more | Rápido, completo              | Archivo, podado    |
+| [Erigon](https://github.com/ledgerwatch/erigon)                           | Go       | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Full                          | Archivo, podado    |
 | [OpenEthereum (Deprecated)](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten, etc.              | Warp, Completo                | Archivo, eliminado |
 
 **Tenga en cuenta que OpenEthereum[ha quedado obsoleta](https://medium.com/openethereum/gnosis-joins-erigon-formerly-turbo-geth-to-release-next-gen-ethereum-client-c6708dd06dd)y no tiene mantenimiento.** Debe usarla con precaución y, preferiblemente, cambiar de cliente.
@@ -174,7 +173,7 @@ Los modos de sincronización representan diferentes enfoques de este proceso con
 
 Resumen general de los enfoques de sincronización utilizados en clientes listos para la red principal:
 
-##### Sincronización total {#full-sync}
+##### Sincronización total
 
 La sincronización total descarga todos los bloques (incluidos los encabezados, las transacciones y los recibos) y va generando de manera creciente el estado del la cadena de bloques al ejecutar cada bloque desde el principio.
 
@@ -244,17 +243,15 @@ Como cualquier otra configuración, puede establecerse con un parámetro de inic
 
 ## Clientes de consenso (anteriormente, clientes Eth2) {#consensus-clients}
 
-Existen múltiples clientes de consenso (antes conocidos como clientes "Eth2") que respaldan las [actualizaciones de conseso](/upgrades/beacon-chain/). They are running the Beacon Chain and will provide proof-of-stake consensus mechanism to execution clients after [The Merge](/upgrades/merge/).
-
-[Ver clientes de consenso](/upgrades/get-involved/#clients).
+Existen múltiples clientes de consenso (antes conocidos como clientes "Eth2") que respaldan las [actualizaciones de conseso](/roadmap/beacon-chain/). They are running the Beacon Chain and will provide proof-of-stake consensus mechanism to execution clients after [The Merge](/roadmap/merge/).
 
 | Cliente                                                     | Idioma     | Sistemas operativos   | Redes                                     |
 | ----------------------------------------------------------- | ---------- | --------------------- | ----------------------------------------- |
-| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | Cadena de baliza, Prater                  |
-| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | Cadena de baliza, Prater                  |
-| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | Cadena de baliza, Prater, Pyrmont         |
-| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | Cadena de baliza, Prater                  |
-| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Ir         | Linux, Windows, macOS | Cadena de baliza, Gnosis, Prater, Pyrmont |
+| [Teku](https://pegasys.tech/teku)                           | Java       | Linux, Windows, macOS | Cadena de baliza, Goerli                  |
+| [Nimbus](https://nimbus.team/)                              | Nim        | Linux, Windows, macOS | Cadena de baliza, Goerli                  |
+| [Lighthouse](https://lighthouse-book.sigmaprime.io/)        | Rust       | Linux, Windows, macOS | Cadena de baliza, Goerli, Pyrmont         |
+| [Lodestar](https://lodestar.chainsafe.io/)                  | TypeScript | Linux, Windows, macOS | Cadena de baliza, Goerli                  |
+| [Prysm](https://docs.prylabs.network/docs/getting-started/) | Go         | Linux, Windows, macOS | Cadena de baliza, Gnosis, Goerli, Pyrmont |
 
 ## Hardware {#hardware}
 
@@ -309,7 +306,6 @@ Existe mucha información acerca de los clientes de Ethereum en internet. Estos 
 
 - [Ethereum 101 - Parte 2 - Explicación de los nodos](https://kauri.io/ethereum-101-part-2-understanding-nodes/48d5098292fd4f11b251d1b1814f0bba/a) _– Wil Barnes, 13 de febrero de 2019_
 - [Ejecución de los nodos completos de Ethereum: una guía para aquellas personas que se encuentren desmotivadas](https://medium.com/@JustinMLeroux/running-ethereum-full-nodes-a-guide-for-the-barely-motivated-a8a13e7a0d31) _– Justin Leroux, 7 de noviembre de 2019_
-- [Ejecución de un nodo Ethereum](https://docs.ethhub.io/using-ethereum/running-an-ethereum-node/)_: ETHHub, actualizado frecuentemente_
 - [Análisis de los requisitos de hardware para crear un nodo validado y completo de Ethereum](https://medium.com/coinmonks/analyzing-the-hardware-requirements-to-be-an-ethereum-full-validated-node-dc064f167902)_: Albert Palau, 24 de Septiembre de 2018_
 - [Ejecución de un nodo Besu Hyperledger en la red principal de Ethereum: beneficios, requisitos y configuración](https://pegasys.tech/running-a-hyperledger-besu-node-on-the-ethereum-mainnet-benefits-requirements-and-setup/) _, Felipe Faraggi, 7 de mayo de 2020_
 
@@ -320,5 +316,5 @@ Existe mucha información acerca de los clientes de Ethereum en internet. Estos 
 
 ## Tutoriales relacionados {#related-tutorials}
 
-- [Ejecución de un nodo con Geth](/developers/tutorials/run-light-node-geth/)_: cómo descargar, instalar y ejecutar Geth. Covering syncmodes, the JavaScript console, and more._
-- [Convierta su Raspberry Pi 4 en un nodo validador con solo intercambiar su tarjeta MicroSD - Guía de instalación ](/developers/tutorials/run-node-raspberry-pi/) _ Intercambie su Raspberry Pi 4, conecte un cable ethernet, conecte el disco SSD y encienda el dispositivo para convertir el Raspberry Pi 4 en un nodo completo de Ethereum mediante la activación de la capa de ejecución (red principal) o la capa de consenso (cadena de baliza/validador)._
+- [Ejecución de un nodo con Geth](/developers/tutorials/run-light-node-geth/) _: cómo descargar, instalar y ejecutar Geth. Covering syncmodes, the JavaScript console, and more._
+- [Convierta su Raspberry Pi 4 en un nodo validador con solo intercambiar su tarjeta MicroSD - Guía de instalación](/developers/tutorials/run-node-raspberry-pi/) _Intercambie su Raspberry Pi 4, conecte un cable ethernet, conecte el disco SSD y encienda el dispositivo para convertir el Raspberry Pi 4 en un nodo completo de Ethereum mediante la activación de la capa de ejecución (red principal) o la capa de consenso (cadena de baliza/validador)._

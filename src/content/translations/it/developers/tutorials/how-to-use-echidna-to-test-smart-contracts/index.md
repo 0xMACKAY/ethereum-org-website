@@ -3,20 +3,17 @@ title: Come usare Echidna per testare gli smart contract
 description: Come usare Echidna per testare automaticamente gli smart contract
 author: "Trailofbits"
 lang: it
-sidebar: true
 tags:
   - "Solidity"
   - "smart contract"
   - "sicurezza"
   - "test"
   - "fuzzing"
-skill: avanzato
+skill: advanced
 published: 2020-04-10
 source: Creare contratti sicuri
 sourceUrl: https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna
 ---
-
-<!-- Probably turn into a serialised tutorial -->
 
 ## Installazione {#installation}
 
@@ -40,7 +37,7 @@ cd /home/training
 
 ### Binario {#binary}
 
-[https://github.com/crytic/echidna/releases/tag/1.4.0.0](https://github.com/crytic/echidna/releases/tag/1.4.0.0)
+[https://github.com/crytic/echidna/releases/tag/v1.4.0.0](https://github.com/crytic/echidna/releases/tag/v1.4.0.0)
 
 ## Introduzione al fuzzing basato sulla proprietà {#introduction-to-property-based-fuzzing}
 
@@ -48,7 +45,7 @@ Echidna è un fuzzer basato sulla proprietà, che abbiamo descritto nei nostri p
 
 ### Fuzzing {#fuzzing}
 
-Il [fuzzing](https://en.wikipedia.org/wiki/Fuzzing) è una ben nota tecnica nella community della sicurezza. Consiste nel generare input più o meno casualmente per trovare i bug nel programma. I fuzzer per il software tradizionale (come [AFL](http://lcamtuf.coredump.cx/afl/) o [LibFuzzer](https://llvm.org/docs/LibFuzzer.html)) sono noti per essere strumenti efficienti per trovare i bug.
+Il [fuzzing](https://wikipedia.org/wiki/Fuzzing) è una ben nota tecnica nella community della sicurezza. Consiste nel generare input più o meno casualmente per trovare i bug nel programma. I fuzzer per il software tradizionale (come [AFL](http://lcamtuf.coredump.cx/afl/) o [LibFuzzer](https://llvm.org/docs/LibFuzzer.html)) sono noti per essere strumenti efficienti per trovare i bug.
 
 Oltre alla generazione di input puramente casuale, esistono molte tecniche e strategie per generare input validi, tra cui:
 
@@ -58,7 +55,7 @@ Oltre alla generazione di input puramente casuale, esistono molte tecniche e str
 
 ### Fuzzing basato sulla proprietà {#property-based-fuzzing}
 
-Echidna appartiene a una famiglia specifica di fuzzer: il fuzzing basato sulla proprietà, ampiamente ispirato da [QuickCheck](https://en.wikipedia.org/wiki/QuickCheck). In contrasto al fuzzer classico che prova a trovare i crash, Echidna prova a rompere le invarianti definite dall'utente.
+Echidna appartiene a una famiglia specifica di fuzzer: il fuzzing basato sulla proprietà, ampiamente ispirato da [QuickCheck](https://wikipedia.org/wiki/QuickCheck). In contrasto al fuzzer classico che prova a trovare i crash, Echidna prova a rompere le invarianti definite dall'utente.
 
 Negli smart contract, le invarianti sono funzioni di Solidity, che possono rappresentare ogni stato non corretto o non valido raggiungibile dal contratto, tra cui:
 
@@ -547,9 +544,9 @@ Seed: -7293830866560616537
 
 Questa volta, ha scoperto che la proprietà è immediatamente violata.
 
-## Individuare le transazioni ad alto consumo di carburante {#finding-transactions-with-high-gas-consumption}
+## Individuare le transazioni ad alto consumo di gas {#finding-transactions-with-high-gas-consumption}
 
-Vedremo come individuare le transazioni con un alto consumo di carburante con Echidna. L'obiettivo è il seguente smart contract:
+Vedremo come individuare le transazioni con un alto consumo di gas con Echidna. L'obiettivo è il seguente smart contract:
 
 ```solidity
 contract C {
@@ -574,7 +571,7 @@ contract C {
 }
 ```
 
-Qui `expensive` può avere un grande consumo di carburante.
+Qui `expensive` può avere un gran consumo di gas.
 
 Attualmente, Echidna necessità sempre di una proprietà da testare: qui `echidna_test` restituisce sempre `true`. Possiamo eseguire Echidna per verificarlo:
 
@@ -586,9 +583,9 @@ echidna_test: passed! 🎉
 Seed: 2320549945714142710
 ```
 
-### Misurare il consumo di carburante {#measuring-gas-consumption}
+### Misurare il Consumo di Gas {#measuring-gas-consumption}
 
-Per abilitare il consumo di carburante con Echidna, crea un file di configurazione `config.yaml`:
+Per abilitare il consumo di gas con Echidna, crea un file di configurazione `config.yaml`:
 
 ```yaml
 estimateGas: true
@@ -620,12 +617,12 @@ Seed: -325611019680165325
 
 ```
 
-- Il carburante mostrato è una stima fornita da [HEVM](https://github.com/dapphub/dapptools/tree/master/src/hevm#hevm-).
+- Il gas mostrato è una stima fornita da [HEVM](https://github.com/dapphub/dapptools/tree/master/src/hevm#hevm-).
 
-### Filtrare le chiamate di riduzione del carburante {#filtering-out-gas-reducing-calls}
+### Filtrare le Chiamate di Riduzione del Gas {#filtering-out-gas-reducing-calls}
 
-Il tutorial di cui sopra sulle **funzioni di filtraggio da chiamare durante una campagna di fuzzing** mostra come rimuovere certe funzioni dal proprio test.  
-Ciò può essere fondamentale per ottenere una stima accurata del carburante. Considera l'esempio seguente:
+Il tutorial precedente sulle **funzioni di filtraggio da chiamare durante una campagna di fuzzing**, mostra come rimuovere alcune funzioni dal tuo test.  
+Questo può esser critico per ottenere una stima accurata del gas. Considera l'esempio seguente:
 
 ```solidity
 contract C {
@@ -651,7 +648,7 @@ contract C {
 }
 ```
 
-Se Echidna può chiamare tutte le funzioni, non troverà facilmente le transazioni con alti costi del carburante:
+Se Echidna può chiamare tutte le funzioni, non troverà facilmente le transazioni a costo elevato di gas:
 
 ```
 $ echidna-test pushpop.sol --config config.yaml
@@ -680,9 +677,9 @@ push used a maximum of 40839 gas
 check used a maximum of 1484472 gas
 ```
 
-### Riepilogo: Individuare le transazioni ad alto consumo di carburante {#summary-finding-transactions-with-high-gas-consumption}
+### Sommario: Individuare le transazioni ad alto consumo di gas {#summary-finding-transactions-with-high-gas-consumption}
 
-Echidna può individuare le transazioni ad alto consumo di carburante usando l'opzione di configurazione `estimateGas`:
+Echidna può trovare le transazioni ad alto consumo di gas usando l'opzione di configurazione `estimateGas`:
 
 ```yaml
 estimateGas: true
@@ -693,4 +690,4 @@ $ echidna-test contract.sol --config config.yaml
 ...
 ```
 
-Echidna segnalerà una sequenza con il consumo massimo di carburante per ogni funzione, una volta terminata la campagna di fuzzing.
+Echidna segnalerà una sequenza con il consumo massimo di gas per ogni funzione, una volta terminata la campagna di fuzzing.

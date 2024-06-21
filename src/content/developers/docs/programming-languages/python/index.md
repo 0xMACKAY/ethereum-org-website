@@ -2,7 +2,6 @@
 title: Ethereum for Python Developers
 description: Learn how to develop for Ethereum using python-based projects and tooling
 lang: en
-sidebar: true
 incomplete: true
 ---
 
@@ -24,6 +23,7 @@ Need a more basic primer first? Check out [ethereum.org/learn](/learn/) or [ethe
 ## Beginner articles {#beginner-articles}
 
 - [A (Python) Developer's Guide to Ethereum](https://snakecharmers.ethereum.org/a-developers-guide-to-ethereum-pt-1/)
+- [The state of Python in blockchain 2023 report](https://tradingstrategy.ai/blog/the-state-of-python-in-blockchain-in-2023)
 - [An Introduction to Smart Contracts with Vyper](https://kauri.io/#collections/Getting%20Started/an-introduction-to-smart-contracts-with-vyper/)
 - [Deploy your own ERC20 Token with Python and Brownie](https://betterprogramming.pub/python-blockchain-token-deployment-tutorial-create-an-erc20-77a5fd2e1a58)
 - [How to develop Ethereum contract using Python Flask?](https://medium.com/coinmonks/how-to-develop-ethereum-contract-using-python-flask-9758fe65976e)
@@ -49,9 +49,9 @@ Need a more basic primer first? Check out [ethereum.org/learn](/learn/) or [ethe
 ### Active: {#active}
 
 - [Web3.py](https://github.com/ethereum/web3.py) - _Python library for interacting with Ethereum_
+- [Vyper](https://github.com/ethereum/vyper/) - _Pythonic Smart Contract Language for the EVM_
 - [Ape](https://github.com/ApeWorX/ape) - _The smart contract development tool for Pythonistas, Data Scientists, and Security Professionals_
 - [Brownie](https://github.com/eth-brownie/brownie) - _Python framework for deploying, testing and interacting with Ethereum smart contracts_
-- [Vyper](https://github.com/ethereum/vyper/) - _Pythonic Smart Contract Language for the EVM_
 - [py-evm](https://github.com/ethereum/py-evm) - _implementation of the Ethereum Virtual Machine_
 - [eth-tester](https://github.com/ethereum/eth-tester) - _tools for testing Ethereum-based applications_
 - [eth-utils](https://github.com/ethereum/eth-utils/) - _utility functions for working with Ethereum related codebases_
@@ -65,7 +65,7 @@ Need a more basic primer first? Check out [ethereum.org/learn](/learn/) or [ethe
 ### Archived / No longer maintained: {#archived--no-longer-maintained}
 
 - [Trinity](https://github.com/ethereum/trinity) - _Ethereum Python client_
-- [Mamba](https://mamba.black) - _framework to write, compile, and deploy smart contracts written in Vyper language_
+- [Mamba](https://github.com/arjunaskykok/mamba) - _framework to write, compile, and deploy smart contracts written in Vyper language_
 
 Looking for more resources? Check out [ethereum.org/developers](/developers/).
 
@@ -79,10 +79,10 @@ The following Ethereum-based projects use tools mentioned on this page. The rela
 - [Sushi](https://sushi.com/) uses [Python in managing and deploying their vesting contracts](https://github.com/sushiswap/sushi-vesting-protocols)
 - [Alpha Finance](https://alphafinance.io/), of Alpha Homora fame, uses [Brownie to test and deploy smart contracts](https://github.com/AlphaFinanceLab/alpha-staking-contract)
 
-## Python Community Contributors {#python-community-contributors}
+## Python Community discussion {#python-community-contributors}
 
-The [Ethereum Python Community Discord](https://discord.gg/9zk7snTfWe) is host to a rapidly growing community and is the dedicated
-resource for discussions on any of the above projects and related topics.
+- [Ethereum Python Community Discord](https://discord.gg/9zk7snTfWe) for Web3.py and other Python framework discussion
+- [Vyper Discord](<[https://discord.gg/9zk7snTfWe](https://discord.gg/SdvKC79cJk)>) for Vyper smart contract programming discussion
 
 ## Other aggregated lists {#other-aggregated-lists}
 

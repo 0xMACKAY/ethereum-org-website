@@ -2,7 +2,6 @@
 title: Einleitung zu Ethereum
 description: Die Einführung eines dApp Entwicklers in die Kernkonzepte von Ethereum.
 lang: de
-sidebar: true
 ---
 
 ## Was ist eine Blockchain? {#what-is-a-blockchain}
@@ -118,4 +117,4 @@ _Kennst du eine Community-Ressource, die dir geholfen hat? Bearbeite diese Seite
 
 ## Verwandte Tutorials {#related-tutorials}
 
-- [Ein Entwickler-Guide zu Ethereum, Teil 1 ](/developers/tutorials/a-developers-guide-to-ethereum-part-one/) _– Eine sehr anfängerfreundliche Erkundung von Ethereum mit Python und web3.py_
+- [Ein Entwickler-Guide zu Ethereum, Teil 1](/developers/tutorials/a-developers-guide-to-ethereum-part-one/) _– Eine sehr anfängerfreundliche Erkundung von Ethereum mit Python und web3.py_

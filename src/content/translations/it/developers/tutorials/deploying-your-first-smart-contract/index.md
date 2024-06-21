@@ -1,16 +1,15 @@
 ---
 title: Distribuzione del primo Smart Contract
-description: Introduzione alla distribuzione del primo Smart Contract su una rete di test Ethereum
+description: Introduzione alla distribuzione del primo Smart Contract su una rete di prova Ethereum
 author: "jdourlens"
 tags:
-  - "Smart Contract"
+  - "smart contract"
   - "remix"
-  - "solidity"
-  - "primi passi"
+  - "Solidity"
+  - "per cominciare"
   - "distribuzione"
-skill: principiante
+skill: beginner
 lang: it
-sidebar: true
 published: 2020-04-03
 source: EthereumDev
 sourceUrl: https://ethereumdev.io/deploying-your-first-smart-contract/
@@ -80,7 +79,7 @@ Poi passa alla schermata per la distribuzione e l'esecuzione delle transazioni:
 
 ![L'icona deploy nella toolbar di Remix](./remix-deploy.png)
 
-Una volta sulla schermata di distribuzione ed esecuzione, controlla bene che appaia il nome del tuo contratto e fai clic su Deploy. Come puoi vedere in alto nella pagina, l'ambiente corrente è "JavaScript VM", che significa che distribuiremo il nostro Smart Contract e vi interagiremo su una blockchain di test locale per poter effettuare test in modo più veloce e senza commissioni.
+Una volta sulla schermata di distribuzione ed esecuzione, controlla bene che appaia il nome del tuo contratto e fai clic su Deploy. Come puoi vedere in alto nella pagina, l'ambiente corrente è "JavaScript VM", che significa che distribuiremo il nostro Smart Contract e interagiremo con esso su una blockchain di test locale per poter effettuare test in modo più veloce e senza commissioni.
 
 ![Il pulsante deploy nel compilatore Solidity di Remix](./remix-deploy-button.png)
 
